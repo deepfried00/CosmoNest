@@ -26,7 +26,7 @@ expand_mode = 1
 [node name="Area2D" type="Area2D" parent="CanvasLayer"]
 script = ExtResource("2_5x1q5")
 
-[node name="engine" type="CollisionShape2D" parent="CanvasLayer/Area2D"]
+[node name="mess" type="CollisionShape2D" parent="CanvasLayer/Area2D"]
 position = Vector2(602, 86.625)
 shape = SubResource("RectangleShape2D_5x1q5")
 
