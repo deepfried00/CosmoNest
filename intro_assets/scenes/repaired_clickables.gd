@@ -32,7 +32,7 @@ func _on_click(viewport, event, shape_idx):
 			"co2":
 				co22.visible = true
 			"togalley":
-				Transition.transition_to_scene("res://intro_assets/scenes/theungalley.tscn")
+				Transition.transition_to_scene("res://intro_assets/scenes/theungalley_scene1.tscn")
 				bgm_player.stop() 
 			"tocockpit":
 				print("was clicked")

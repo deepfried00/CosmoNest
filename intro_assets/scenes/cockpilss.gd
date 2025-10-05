@@ -17,6 +17,6 @@ func _on_click(viewport, event, shape_idx):
 			"storage":
 				Transition.transition_to_scene("res://intro_assets/scenes/storageRepaired.tscn")
 			"hyg":
-				Transition.transition_to_scene("res://intro_assets/scenes/repairedHyg.tscn")
+				Transition.transition_to_scene("res://intro_assets/scenes/unrepairedHyg_Scene.tscn")
 				
 				

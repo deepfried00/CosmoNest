@@ -24,6 +24,6 @@ func _on_click(viewport, event, shape_idx):
 				Transition.transition_to_scene("res://intro_assets/scenes/repairedHyg.tscn")
 			"repair":
 				print("repairing")
-				Transition.transition_to_scene("res://intro_assets/scenes/repairedCrew.tscn")
+				Transition.transition_to_scene("res://intro_assets/scenes/repaired_crew_scene.tscn")
 				
 					
