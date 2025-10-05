@@ -1,0 +1,89 @@
+[gd_scene load_steps=12 format=3 uid="uid://di51pcsfgmsfv"]
+
+[ext_resource type="Texture2D" uid="uid://cb1x2uy8g7ncc" path="res://intro_assets/scenes/unrep_toilet.webp" id="1_dsvd0"]
+[ext_resource type="Texture2D" uid="uid://di25fa6u7vkbq" path="res://intro_assets/scenes/box.png" id="2_itlwb"]
+[ext_resource type="Script" uid="uid://6v683dpedry" path="res://intro_assets/scenes/unrep_HYG_click.gd" id="3_6133t"]
+[ext_resource type="Texture2D" uid="uid://xdve4y8jbp5i" path="res://intro_assets/scenes/oldtoilet.png" id="4_o3kac"]
+[ext_resource type="Script" uid="uid://dhotqstn4wphh" path="res://intro_assets/scenes/oldtoilet.gd" id="5_6133t"]
+[ext_resource type="Texture2D" uid="uid://bu1fi4vhdshfa" path="res://intro_assets/scenes/bath.png" id="5_c6jim"]
+[ext_resource type="Script" uid="uid://dsg2lgkw0pi1b" path="res://intro_assets/scenes/oldbath.gd" id="7_6133t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c6jim"]
+size = Vector2(364, 52.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6133t"]
+size = Vector2(167, 152)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pkvrm"]
+size = Vector2(637, 711)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e8itx"]
+size = Vector2(636, 195)
+
+[node name="UnrepairedHyg" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_dsvd0")
+expand_mode = 1
+
+[node name="thebox" type="TextureRect" parent="CanvasLayer"]
+offset_left = 1052.0
+offset_top = 37.0
+offset_right = 1223.0
+offset_bottom = 210.0
+mouse_filter = 2
+texture = ExtResource("2_itlwb")
+expand_mode = 1
+
+[node name="Area2D" type="Area2D" parent="CanvasLayer"]
+script = ExtResource("3_6133t")
+
+[node name="toCockpit" type="CollisionShape2D" parent="CanvasLayer/Area2D"]
+position = Vector2(913, 23.75)
+shape = SubResource("RectangleShape2D_c6jim")
+
+[node name="repair" type="CollisionShape2D" parent="CanvasLayer/Area2D"]
+position = Vector2(1143, 134)
+shape = SubResource("RectangleShape2D_6133t")
+
+[node name="toilet" type="CollisionShape2D" parent="CanvasLayer/Area2D"]
+position = Vector2(308.5, 345.5)
+shape = SubResource("RectangleShape2D_pkvrm")
+
+[node name="bathroom" type="CollisionShape2D" parent="CanvasLayer/Area2D"]
+position = Vector2(959, 631.5)
+shape = SubResource("RectangleShape2D_e8itx")
+
+[node name="oldtoilet" type="TextureRect" parent="CanvasLayer/Area2D"]
+offset_left = 331.0
+offset_top = -93.0
+offset_right = 679.0
+offset_bottom = 461.0
+mouse_filter = 2
+texture = ExtResource("4_o3kac")
+expand_mode = 1
+script = ExtResource("5_6133t")
+
+[node name="oldbath" type="TextureRect" parent="CanvasLayer/Area2D"]
+offset_left = 489.0
+offset_top = 273.0
+offset_right = 827.0
+offset_bottom = 762.0
+mouse_filter = 2
+texture = ExtResource("5_c6jim")
+expand_mode = 1
+script = ExtResource("7_6133t")

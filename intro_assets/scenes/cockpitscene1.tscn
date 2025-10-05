@@ -1,0 +1,88 @@
+[gd_scene load_steps=8 format=3 uid="uid://ci7tgafrwepuy"]
+
+[ext_resource type="PackedScene" uid="uid://fybdbhyw8x8a" path="res://intro_assets/scenes/cockpitmain.tscn" id="1_68wft"]
+[ext_resource type="Script" uid="uid://blmb10bhu5aoq" path="res://intro_assets/scenes/cockpitscene_1.gd" id="1_qgnfg"]
+[ext_resource type="Texture2D" uid="uid://bvd0hoisix7pe" path="res://intro_assets/scenes/arrow.png" id="3_l0b21"]
+[ext_resource type="AudioStream" uid="uid://c346wxrqyakkj" path="res://intro_assets/sound/gamesound.mp3" id="4_ire4o"]
+[ext_resource type="AudioStream" uid="uid://chqxnrn7wflmr" path="res://intro_assets/sound/Voice.mp3" id="4_ptkq3"]
+[ext_resource type="Texture2D" uid="uid://c05hq0ci2orvm" path="res://intro_assets/scenes/textbox.png" id="7_1u8cl"]
+[ext_resource type="PackedScene" uid="uid://kcqc2svluacg" path="res://intro_assets/scenes/robodim.tscn" id="8_0p28i"]
+
+[node name="Cockpitscene1" type="Node2D"]
+script = ExtResource("1_qgnfg")
+
+[node name="TestVid" parent="." instance=ExtResource("1_68wft")]
+position = Vector2(-112, 0)
+
+[node name="Arrow" type="Sprite2D" parent="."]
+position = Vector2(882, 140)
+scale = Vector2(0.2730001, 0.28200004)
+texture = ExtResource("3_l0b21")
+
+[node name="Gamesound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ire4o")
+autoplay = true
+
+[node name="Voice" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ptkq3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchor_left = 0.74200004
+anchor_top = 0.528
+anchor_right = 0.74200004
+anchor_bottom = 0.528
+offset_left = -78.76007
+offset_top = -85.16
+offset_right = 83.23993
+offset_bottom = 91.84
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.48900002
+anchor_top = 0.384
+anchor_right = 0.48900002
+anchor_bottom = 0.384
+offset_left = -92.218
+offset_top = -67.968
+offset_right = 79.782
+offset_bottom = 81.032
+mouse_filter = 2
+bbcode_enabled = true
+
+[node name="textBox" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 802.0
+offset_top = 234.0
+offset_right = 1112.0
+offset_bottom = 533.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("7_1u8cl")
+expand_mode = 1
+flip_h = true
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer2"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Robodim" parent="CanvasLayer2/Control" instance=ExtResource("8_0p28i")]
+position = Vector2(956, 710)

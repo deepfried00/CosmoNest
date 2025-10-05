@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://bmk7g0vctj7nl"]
+
+[ext_resource type="Texture2D" uid="uid://b06d7ou7bg71j" path="res://intro_assets/scenes/rep_kitch.webp" id="1_gurv3"]
+[ext_resource type="Script" uid="uid://3vamw0sv8tjk" path="res://intro_assets/scenes/kicten_click.gd" id="2_ohht0"]
+[ext_resource type="AudioStream" uid="uid://c346wxrqyakkj" path="res://intro_assets/sound/gamesound.mp3" id="3_ohht0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gurv3"]
+size = Vector2(75, 199)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fxqbs"]
+size = Vector2(95, 225)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ohht0"]
+size = Vector2(386, 61)
+
+[node name="Kitchenrepaired" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_gurv3")
+expand_mode = 1
+
+[node name="Area2D" type="Area2D" parent="CanvasLayer"]
+script = ExtResource("2_ohht0")
+
+[node name="lss" type="CollisionShape2D" parent="CanvasLayer/Area2D"]
+position = Vector2(27.5, 600.5)
+shape = SubResource("RectangleShape2D_gurv3")
+
+[node name="engine" type="CollisionShape2D" parent="CanvasLayer/Area2D"]
+position = Vector2(1226.5, 513.5)
+shape = SubResource("RectangleShape2D_fxqbs")
+
+[node name="storage" type="CollisionShape2D" parent="CanvasLayer/Area2D"]
+position = Vector2(674, 698.5)
+shape = SubResource("RectangleShape2D_ohht0")
+
+[node name="Gamesound" type="AudioStreamPlayer" parent="CanvasLayer/Area2D"]
+stream = ExtResource("3_ohht0")

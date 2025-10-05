@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfp4kv2dt0348"]
+
+[ext_resource type="Script" uid="uid://ckni53vkotn53" path="res://intro_assets/scenes/animated_texts.gd" id="1_4ywj1"]
+
+[node name="AnimatedTexts" type="CanvasLayer"]
+script = ExtResource("1_4ywj1")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchor_left = 0.67200005
+anchor_top = 0.536
+anchor_right = 0.67200005
+anchor_bottom = 0.536
+offset_left = -220.16003
+offset_top = -25.920013
+offset_right = -220.16003
+offset_bottom = -25.920013
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="text" type="RichTextLabel" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = -23.0
+offset_top = -27.0
+offset_right = 17.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+horizontal_alignment = 1
+vertical_alignment = 1

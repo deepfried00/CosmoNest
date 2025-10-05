@@ -1,0 +1,74 @@
+[gd_scene load_steps=10 format=3 uid="uid://ckhlwsho83a3o"]
+
+[ext_resource type="Texture2D" uid="uid://b8lgkuq302pu3" path="res://intro_assets/scenes/kitchen.webp" id="1_jrenw"]
+[ext_resource type="Script" uid="uid://dciy4ih2tys8e" path="res://intro_assets/scenes/kitchen_clickables.gd" id="2_r3cer"]
+[ext_resource type="Texture2D" uid="uid://di25fa6u7vkbq" path="res://intro_assets/scenes/box.png" id="2_tov2n"]
+[ext_resource type="Texture2D" uid="uid://bsd7epddevqc4" path="res://intro_assets/scenes/kitche.png" id="3_tov2n"]
+[ext_resource type="Script" uid="uid://ctbqjtptqy7i6" path="res://intro_assets/scenes/kitchenNote.gd" id="4_b3hb2"]
+[ext_resource type="AudioStream" uid="uid://c346wxrqyakkj" path="res://intro_assets/sound/gamesound.mp3" id="5_erfbg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_20ftv"]
+size = Vector2(195, 112)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pbhoo"]
+size = Vector2(73.5, 196)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b3hb2"]
+size = Vector2(168, 140)
+
+[node name="Thegalley" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_jrenw")
+expand_mode = 1
+
+[node name="thebox" type="TextureRect" parent="CanvasLayer"]
+offset_left = 983.0
+offset_top = 148.0
+offset_right = 1154.0
+offset_bottom = 321.0
+texture = ExtResource("2_tov2n")
+expand_mode = 1
+
+[node name="Area2D" type="Area2D" parent="CanvasLayer"]
+script = ExtResource("2_r3cer")
+
+[node name="thenote" type="CollisionShape2D" parent="CanvasLayer/Area2D"]
+position = Vector2(182, 292)
+shape = SubResource("RectangleShape2D_20ftv")
+
+[node name="lss" type="CollisionShape2D" parent="CanvasLayer/Area2D"]
+position = Vector2(29.25, 606)
+shape = SubResource("RectangleShape2D_pbhoo")
+
+[node name="repair" type="CollisionShape2D" parent="CanvasLayer/Area2D"]
+position = Vector2(1078, 236)
+shape = SubResource("RectangleShape2D_b3hb2")
+
+[node name="note" type="TextureRect" parent="CanvasLayer/Area2D"]
+self_modulate = Color(0.9867516, 0.9867516, 0.9867516, 1)
+offset_left = 405.0
+offset_top = 24.0
+offset_right = 930.0
+offset_bottom = 702.0
+mouse_filter = 2
+texture = ExtResource("3_tov2n")
+expand_mode = 1
+script = ExtResource("4_b3hb2")
+
+[node name="Gamesound" type="AudioStreamPlayer" parent="CanvasLayer/Area2D"]
+stream = ExtResource("5_erfbg")

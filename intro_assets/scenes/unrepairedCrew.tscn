@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://drkheqan6ejry"]
+
+[ext_resource type="Texture2D" uid="uid://b0gngjjxo2ck3" path="res://intro_assets/scenes/crew/unrepCrew.webp" id="1_4crjj"]
+[ext_resource type="Texture2D" uid="uid://di25fa6u7vkbq" path="res://intro_assets/scenes/box.png" id="2_sym1w"]
+[ext_resource type="Script" uid="uid://ct152wavbgmk5" path="res://intro_assets/scenes/crew_clickables.gd" id="3_psyx3"]
+[ext_resource type="Texture2D" uid="uid://bljqi6p1mouxq" path="res://intro_assets/scenes/crew/crewnote.png" id="4_k7u7a"]
+[ext_resource type="Script" uid="uid://cuada5xs4t5p6" path="res://intro_assets/scenes/notee.gd" id="5_psyx3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g7nmf"]
+size = Vector2(255, 178.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2tj3c"]
+size = Vector2(149.5, 144)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r5d0q"]
+size = Vector2(136, 173)
+
+[node name="UnrepairedCrew" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_4crjj")
+expand_mode = 1
+
+[node name="thebox" type="TextureRect" parent="CanvasLayer"]
+offset_left = 1024.0
+offset_top = 148.0
+offset_right = 1195.0
+offset_bottom = 321.0
+mouse_filter = 2
+texture = ExtResource("2_sym1w")
+expand_mode = 1
+
+[node name="Area2D" type="Area2D" parent="CanvasLayer"]
+script = ExtResource("3_psyx3")
+
+[node name="hyg" type="CollisionShape2D" parent="CanvasLayer/Area2D"]
+position = Vector2(604.5, 87.875)
+shape = SubResource("RectangleShape2D_g7nmf")
+
+[node name="repair" type="CollisionShape2D" parent="CanvasLayer/Area2D"]
+position = Vector2(1117, 245)
+shape = SubResource("RectangleShape2D_2tj3c")
+
+[node name="note" type="CollisionShape2D" parent="CanvasLayer/Area2D"]
+position = Vector2(1132, 477.5)
+shape = SubResource("RectangleShape2D_r5d0q")
+
+[node name="notee" type="TextureRect" parent="CanvasLayer/Area2D"]
+offset_left = 772.0
+offset_top = -20.0
+offset_right = 1292.0
+offset_bottom = 649.0
+texture = ExtResource("4_k7u7a")
+script = ExtResource("5_psyx3")

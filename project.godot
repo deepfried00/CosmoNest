@@ -1,0 +1,37 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="CosmoNest!"
+run/main_scene="uid://bjvp3gi5hoovb"
+config/features=PackedStringArray("4.5", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+Transition="*res://intro_assets/scenes/transition.tscn"
+AnimatedTexts="*res://intro_assets/scenes/AnimatedTexts.tscn"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="viewport"
+
+[file_customization]
+
+folder_colors={
+"res://intro_assets/scenes/robo/": "teal"
+}
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.17547843, 0.15038237, 0.19805914, 0.63529414)

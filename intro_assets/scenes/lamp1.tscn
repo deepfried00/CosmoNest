@@ -1,0 +1,75 @@
+[gd_scene load_steps=17 format=3 uid="uid://b7kmbbepqauc2"]
+
+[ext_resource type="Script" uid="uid://inho3xhmx0hl" path="res://intro_assets/scenes/lamp1.gd" id="1_7o1ip"]
+[ext_resource type="Texture2D" uid="uid://cbgqb3olstaok" path="res://intro_assets/scenes/lamp1c/frame_00_delay-0.05s.png" id="2_2sigw"]
+[ext_resource type="Texture2D" uid="uid://df81liipqg875" path="res://intro_assets/scenes/lamp1c/frame_01_delay-0.05s.png" id="3_ebe0r"]
+[ext_resource type="Texture2D" uid="uid://dlish3ha8u7ov" path="res://intro_assets/scenes/lamp1c/frame_02_delay-0.05s.png" id="4_n48hb"]
+[ext_resource type="Texture2D" uid="uid://beb37wb7ffwbv" path="res://intro_assets/scenes/lamp1c/frame_03_delay-0.05s.png" id="5_toim6"]
+[ext_resource type="Texture2D" uid="uid://cmwe5op3gaofr" path="res://intro_assets/scenes/lamp1c/frame_04_delay-0.05s.png" id="6_r2i5o"]
+[ext_resource type="Texture2D" uid="uid://758oe2fjogm7" path="res://intro_assets/scenes/lamp1c/frame_05_delay-0.05s.png" id="7_jbpjo"]
+[ext_resource type="Texture2D" uid="uid://cecwyryoa4jk1" path="res://intro_assets/scenes/lamp1c/frame_06_delay-0.05s.png" id="8_1fiec"]
+[ext_resource type="Texture2D" uid="uid://bxny8vx64ex4w" path="res://intro_assets/scenes/lamp1c/frame_07_delay-0.05s.png" id="9_idfd1"]
+[ext_resource type="Texture2D" uid="uid://duedn0ycvat4" path="res://intro_assets/scenes/lamp1c/frame_08_delay-0.05s.png" id="10_ssr0y"]
+[ext_resource type="Texture2D" uid="uid://cmcrhftf8xhvl" path="res://intro_assets/scenes/lamp1c/frame_09_delay-0.05s.png" id="11_u1tq2"]
+[ext_resource type="Texture2D" uid="uid://cjwvvvrkmxpds" path="res://intro_assets/scenes/lamp1c/frame_10_delay-0.05s.png" id="12_p3t6x"]
+[ext_resource type="Texture2D" uid="uid://bi0jfhpmosau0" path="res://intro_assets/scenes/lamp1c/frame_11_delay-0.05s.png" id="13_l7tbf"]
+[ext_resource type="Texture2D" uid="uid://csipd6oa215ki" path="res://intro_assets/scenes/lamp1c/frame_12_delay-0.05s.png" id="14_8s6xr"]
+[ext_resource type="Texture2D" uid="uid://bv7wxph7g6voa" path="res://intro_assets/scenes/lamp1c/frame_13_delay-0.05s.png" id="15_0aqh6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0pl7y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2sigw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ebe0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_n48hb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_toim6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_r2i5o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jbpjo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_1fiec")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_idfd1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ssr0y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_u1tq2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_p3t6x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_l7tbf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_8s6xr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_0aqh6")
+}],
+"loop": true,
+"name": &"lamp1",
+"speed": 5.0
+}]
+
+[node name="Lamp1" type="Node2D"]
+script = ExtResource("1_7o1ip")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0pl7y")
+animation = &"lamp1"
+frame_progress = 0.42907727

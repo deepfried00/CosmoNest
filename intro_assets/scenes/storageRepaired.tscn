@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://dn2bdatwkrtth"]
+
+[ext_resource type="Texture2D" uid="uid://d3j1yy6sb2gt8" path="res://intro_assets/scenes/repairedstorage.jpeg" id="1_rqagi"]
+[ext_resource type="Script" uid="uid://bjhpra7xljqc3" path="res://intro_assets/scenes/rep_storage.gd" id="2_j2nw5"]
+[ext_resource type="AudioStream" uid="uid://c346wxrqyakkj" path="res://intro_assets/sound/gamesound.mp3" id="3_iff7f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d5uvx"]
+size = Vector2(75, 199)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7rlhp"]
+size = Vector2(341, 44.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wi68"]
+size = Vector2(386, 61)
+
+[node name="StorageRepaired" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_rqagi")
+expand_mode = 1
+
+[node name="Area2D" type="Area2D" parent="CanvasLayer"]
+script = ExtResource("2_j2nw5")
+
+[node name="tocockpit" type="CollisionShape2D" parent="CanvasLayer/Area2D"]
+position = Vector2(39, 388)
+shape = SubResource("RectangleShape2D_d5uvx")
+
+[node name="galley" type="CollisionShape2D" parent="CanvasLayer/Area2D"]
+position = Vector2(204, 26)
+shape = SubResource("RectangleShape2D_7rlhp")
+
+[node name="crew" type="CollisionShape2D" parent="CanvasLayer/Area2D"]
+position = Vector2(374, 684)
+shape = SubResource("RectangleShape2D_0wi68")
+
+[node name="Gamesound" type="AudioStreamPlayer" parent="CanvasLayer/Area2D"]
+stream = ExtResource("3_iff7f")

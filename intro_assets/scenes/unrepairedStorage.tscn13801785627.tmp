@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://kyj20nhqe25o"]
+
+[ext_resource type="Texture2D" uid="uid://kbolieraby83" path="res://intro_assets/scenes/unrepairedStorage.jpeg" id="1_p0i4i"]
+[ext_resource type="Texture2D" uid="uid://di25fa6u7vkbq" path="res://intro_assets/scenes/box.png" id="2_t48ih"]
+[ext_resource type="Script" uid="uid://yl3r1ryh3x64" path="res://intro_assets/scenes/storageUnrep_clickables.gd" id="3_t48ih"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p0i4i"]
+size = Vector2(64.75, 213)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t48ih"]
+size = Vector2(167, 152)
+
+[node name="UnrepairedStorage" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_p0i4i")
+expand_mode = 1
+
+[node name="thebox" type="TextureRect" parent="CanvasLayer"]
+offset_left = 983.0
+offset_top = 148.0
+offset_right = 1154.0
+offset_bottom = 321.0
+texture = ExtResource("2_t48ih")
+expand_mode = 1
+
+[node name="Area2D" type="Area2D" parent="CanvasLayer"]
+script = ExtResource("3_t48ih")
+
+[node name="toCockpit" type="CollisionShape2D" parent="CanvasLayer/Area2D"]
+position = Vector2(34.625, 382.5)
+shape = SubResource("RectangleShape2D_p0i4i")
+
+[node name="repair" type="CollisionShape2D" parent="CanvasLayer/Area2D"]
+position = Vector2(1075.5, 242)
+shape = SubResource("RectangleShape2D_t48ih")

@@ -1,0 +1,120 @@
+[gd_scene load_steps=28 format=3 uid="uid://kcqc2svluacg"]
+
+[ext_resource type="Texture2D" uid="uid://dtj5jal7er16a" path="res://intro_assets/scenes/robo/1.png" id="1_8y3lv"]
+[ext_resource type="Script" uid="uid://p8g77eid21e" path="res://intro_assets/scenes/robodimplay.gd" id="1_vnw77"]
+[ext_resource type="Texture2D" uid="uid://bmsf4iywm3sxo" path="res://intro_assets/scenes/robo/2.png" id="2_vnw77"]
+[ext_resource type="Texture2D" uid="uid://j0aov3g88s5g" path="res://intro_assets/scenes/robo/3.png" id="3_b18id"]
+[ext_resource type="Texture2D" uid="uid://cfyqndvjmgkad" path="res://intro_assets/scenes/robo/4.png" id="4_bfl7m"]
+[ext_resource type="Texture2D" uid="uid://eslp0echain1" path="res://intro_assets/scenes/robo/5.png" id="5_f00wn"]
+[ext_resource type="Texture2D" uid="uid://bimpbi6mrj50q" path="res://intro_assets/scenes/robo/6.png" id="6_s7did"]
+[ext_resource type="Texture2D" uid="uid://7lg0l4eofr36" path="res://intro_assets/scenes/robo/7.png" id="7_us5nr"]
+[ext_resource type="Texture2D" uid="uid://gr6hc25oikdk" path="res://intro_assets/scenes/robo/8.png" id="8_flbxw"]
+[ext_resource type="Texture2D" uid="uid://dldb0r6gau6yx" path="res://intro_assets/scenes/robo/9.png" id="9_1cjvt"]
+[ext_resource type="Texture2D" uid="uid://y5lub6gepc13" path="res://intro_assets/scenes/robo/10.png" id="10_oo6xm"]
+[ext_resource type="Texture2D" uid="uid://clbxs5i5m2bcu" path="res://intro_assets/scenes/robo/11.png" id="11_a4c7c"]
+[ext_resource type="Texture2D" uid="uid://cdvuoxwgm2yur" path="res://intro_assets/scenes/robo/12.png" id="12_ulkmq"]
+[ext_resource type="Texture2D" uid="uid://ctchnrdtwafoa" path="res://intro_assets/scenes/robo/13.png" id="13_vwgc0"]
+[ext_resource type="Texture2D" uid="uid://cit52cnnyk0s" path="res://intro_assets/scenes/robo/14.png" id="14_j02ye"]
+[ext_resource type="Texture2D" uid="uid://ypjjfgbq728k" path="res://intro_assets/scenes/robo/15.png" id="15_5mo88"]
+[ext_resource type="Texture2D" uid="uid://b1ensi81khoaw" path="res://intro_assets/scenes/robo/16.png" id="16_rxx30"]
+[ext_resource type="Texture2D" uid="uid://tu7a6rouch4a" path="res://intro_assets/scenes/robo/17.png" id="17_ciy6q"]
+[ext_resource type="Texture2D" uid="uid://brb4vtcxcq8i1" path="res://intro_assets/scenes/robo/18.png" id="18_xwbj3"]
+[ext_resource type="Texture2D" uid="uid://bq6xkhgd65ri2" path="res://intro_assets/scenes/robo/19.png" id="19_pk8rf"]
+[ext_resource type="Texture2D" uid="uid://645avay64tg0" path="res://intro_assets/scenes/robo/20.png" id="20_65ql3"]
+[ext_resource type="Texture2D" uid="uid://oq1gbts3a137" path="res://intro_assets/scenes/robo/21.png" id="21_r6i3j"]
+[ext_resource type="Texture2D" uid="uid://cplosmkwwe1ql" path="res://intro_assets/scenes/robo/22.png" id="22_2efq0"]
+[ext_resource type="Texture2D" uid="uid://dxpocje25p0ne" path="res://intro_assets/scenes/robo/23.png" id="23_ooe32"]
+[ext_resource type="Texture2D" uid="uid://yit01y3b0rlc" path="res://intro_assets/scenes/robo/24.png" id="24_ttpbu"]
+[ext_resource type="Texture2D" uid="uid://dbvua4fke52hb" path="res://intro_assets/scenes/robo/25.png" id="25_hsx58"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rtpw2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8y3lv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_vnw77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_b18id")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bfl7m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_f00wn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_s7did")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_us5nr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_flbxw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_1cjvt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_oo6xm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_a4c7c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ulkmq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_vwgc0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_j02ye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_5mo88")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_rxx30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ciy6q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_xwbj3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_pk8rf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_65ql3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_r6i3j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_2efq0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ooe32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ttpbu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_hsx58")
+}],
+"loop": true,
+"name": &"robodimblink",
+"speed": 15.0
+}]
+
+[node name="Robodim" type="Node2D"]
+script = ExtResource("1_vnw77")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(130, -134)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_rtpw2")
+animation = &"robodimblink"

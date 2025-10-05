@@ -1,0 +1,69 @@
+[gd_scene load_steps=6 format=3 uid="uid://g33mapqgiloy"]
+
+[ext_resource type="PackedScene" uid="uid://bmk7g0vctj7nl" path="res://intro_assets/scenes/kitchenrepaired.tscn" id="1_05jq7"]
+[ext_resource type="Script" uid="uid://drywve4fl6r63" path="res://intro_assets/scenes/kitchenrepaired_scene.gd" id="1_mhgye"]
+[ext_resource type="PackedScene" uid="uid://kcqc2svluacg" path="res://intro_assets/scenes/robodim.tscn" id="2_mhgye"]
+[ext_resource type="Texture2D" uid="uid://c05hq0ci2orvm" path="res://intro_assets/scenes/textbox.png" id="3_7l7hh"]
+[ext_resource type="AudioStream" uid="uid://chqxnrn7wflmr" path="res://intro_assets/sound/Voice.mp3" id="4_f56ev"]
+
+[node name="KitchenrepairedScene" type="Node2D"]
+script = ExtResource("1_mhgye")
+
+[node name="Kitchenrepaired" parent="." instance=ExtResource("1_05jq7")]
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer2"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Robodim" parent="CanvasLayer2/Control" instance=ExtResource("2_mhgye")]
+position = Vector2(956, 710)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer2"]
+offset_left = 880.0
+offset_top = 276.0
+offset_right = 1115.0
+offset_bottom = 521.0
+texture = ExtResource("3_7l7hh")
+expand_mode = 1
+flip_h = true
+metadata/_edit_lock_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchor_left = 0.74200004
+anchor_top = 0.528
+anchor_right = 0.74200004
+anchor_bottom = 0.528
+offset_left = -61.76007
+offset_top = -90.16
+offset_right = 100.23993
+offset_bottom = 86.84
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.67200005
+anchor_top = 0.60700005
+anchor_right = 0.67200005
+anchor_bottom = 0.60700005
+offset_left = -73.864006
+offset_top = -64.43901
+offset_right = 72.135994
+offset_bottom = 64.56099
+mouse_filter = 2
+bbcode_enabled = true
+
+[node name="Voice" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_f56ev")

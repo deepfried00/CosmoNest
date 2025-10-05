@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqv53ryuo821k"]
+
+[ext_resource type="PackedScene" uid="uid://cdmw0kbeupmo1" path="res://intro_assets/scenes/unrepairedLss.tscn" id="1_bw1lu"]
+[ext_resource type="Script" uid="uid://dnd2xe2nes7pn" path="res://intro_assets/scenes/unrep_lss_scene_1.gd" id="1_r00vl"]
+[ext_resource type="PackedScene" uid="uid://kcqc2svluacg" path="res://intro_assets/scenes/robodim.tscn" id="2_t8t0e"]
+[ext_resource type="Texture2D" uid="uid://c05hq0ci2orvm" path="res://intro_assets/scenes/textbox.png" id="3_1c5q2"]
+[ext_resource type="AudioStream" uid="uid://chqxnrn7wflmr" path="res://intro_assets/sound/Voice.mp3" id="5_gugfw"]
+
+[node name="UnrepLssScene1" type="Node2D"]
+script = ExtResource("1_r00vl")
+
+[node name="UnrepairedLss" parent="." instance=ExtResource("1_bw1lu")]
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer2"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Robodim" parent="CanvasLayer2/Control" instance=ExtResource("2_t8t0e")]
+position = Vector2(956, 710)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer2"]
+offset_left = 880.0
+offset_top = 276.0
+offset_right = 1115.0
+offset_bottom = 521.0
+texture = ExtResource("3_1c5q2")
+expand_mode = 1
+flip_h = true
+
+[node name="Voice" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_gugfw")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchor_left = 0.77900004
+anchor_top = 0.53900003
+anchor_right = 0.77900004
+anchor_bottom = 0.53900003
+offset_left = -90.120056
+offset_top = -68.08002
+offset_right = 72.879944
+offset_bottom = 73.91998
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.5
+offset_top = -71.0
+offset_right = 74.5
+offset_bottom = 84.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true

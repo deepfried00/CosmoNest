@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://sfib1xbwcyjj"]
+
+[ext_resource type="Texture2D" uid="uid://xru4siwpt8wu" path="res://intro_assets/scenes/work/repWork.webp" id="1_4clcn"]
+[ext_resource type="Script" uid="uid://d26lhfh3tn5b5" path="res://intro_assets/repWork_Click.gd" id="2_5x1q5"]
+[ext_resource type="AudioStream" uid="uid://c346wxrqyakkj" path="res://intro_assets/sound/gamesound.mp3" id="2_7n1y2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5x1q5"]
+size = Vector2(236, 168.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nq76j"]
+size = Vector2(306, 42.5)
+
+[node name="RepWork" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_4clcn")
+expand_mode = 1
+
+[node name="Area2D" type="Area2D" parent="CanvasLayer"]
+script = ExtResource("2_5x1q5")
+
+[node name="engine" type="CollisionShape2D" parent="CanvasLayer/Area2D"]
+position = Vector2(602, 86.625)
+shape = SubResource("RectangleShape2D_5x1q5")
+
+[node name="crew" type="CollisionShape2D" parent="CanvasLayer/Area2D"]
+position = Vector2(648, 700.25)
+shape = SubResource("RectangleShape2D_nq76j")
+
+[node name="Gamesound" type="AudioStreamPlayer" parent="CanvasLayer/Area2D"]
+stream = ExtResource("2_7n1y2")

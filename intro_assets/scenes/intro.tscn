@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=3 uid="uid://bjvp3gi5hoovb"]
+
+[ext_resource type="Script" uid="uid://cfpq1boki4n7i" path="res://intro_assets/scripts/intro.gd" id="1_y1k2n"]
+[ext_resource type="Script" uid="uid://bp52gjj0vp1ur" path="res://intro_assets/scripts/rich_text_label.gd" id="2_im13w"]
+[ext_resource type="Texture2D" uid="uid://bhgrigegv7ss4" path="res://intro_assets/scenes/intro1.jpeg" id="3_5x33f"]
+[ext_resource type="AudioStream" uid="uid://fj6jek14qg62" path="res://intro_assets/sound/intro.mp3" id="4_im13w"]
+[ext_resource type="AudioStream" uid="uid://d2evy7ynnn5rr" path="res://intro_assets/sound/typing sound.mp3" id="5_5x33f"]
+[ext_resource type="Texture2D" uid="uid://ljwmvirujt3" path="res://intro_assets/scenes/logo.png" id="6_lp5dk"]
+
+[node name="intro" type="Node2D"]
+position = Vector2(650, 450)
+script = ExtResource("1_y1k2n")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="introtext" type="PanelContainer" parent="CanvasLayer"]
+custom_minimum_size = Vector2(0, 150)
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -148.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/introtext"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[font=res://intro assets/font/public-pixel-font/PublicPixel-rv0pA.ttf] 
+Year 2050
+human are conducting special reseach 
+"
+horizontal_alignment = 1
+script = ExtResource("2_im13w")
+
+[node name="introtheme" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_im13w")
+
+[node name="typingSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_5x33f")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="logoforIntro" type="TextureRect" parent="CanvasLayer2"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -316.0
+offset_bottom = 283.0
+grow_horizontal = 0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture = ExtResource("6_lp5dk")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="introslides" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_5x33f")

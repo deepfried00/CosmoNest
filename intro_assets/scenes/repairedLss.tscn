@@ -1,0 +1,162 @@
+[gd_scene load_steps=22 format=3 uid="uid://dx17ijpxirll1"]
+
+[ext_resource type="VideoStream" uid="uid://q8fxj2up5bsn" path="res://intro_assets/scenes/repairedLss.ogv" id="1_s5f0t"]
+[ext_resource type="PackedScene" uid="uid://b7kmbbepqauc2" path="res://intro_assets/scenes/lamp1.tscn" id="2_hgwjn"]
+[ext_resource type="PackedScene" uid="uid://i3kr6l8x8rq8" path="res://intro_assets/scenes/lamp2.tscn" id="3_n31mr"]
+[ext_resource type="Texture2D" uid="uid://d1s7ynqg0quss" path="res://intro_assets/scenes/1000015976.png" id="4_n31mr"]
+[ext_resource type="AudioStream" uid="uid://c346wxrqyakkj" path="res://intro_assets/sound/gamesound.mp3" id="5_qklxm"]
+[ext_resource type="Script" uid="uid://dpqsb0mexcpej" path="res://intro_assets/scenes/repaired_clickables.gd" id="6_j8ue0"]
+[ext_resource type="Texture2D" uid="uid://ctu13mpmk5n7x" path="res://intro_assets/scenes/micro.png" id="7_6pxe6"]
+[ext_resource type="Script" uid="uid://bw6ei25kmjn63" path="res://intro_assets/scenes/algae.gd" id="8_6pxe6"]
+[ext_resource type="Texture2D" uid="uid://3yl58cworfw" path="res://intro_assets/scenes/power.png" id="8_kmo8u"]
+[ext_resource type="Texture2D" uid="uid://c2rarkl6tw541" path="res://intro_assets/scenes/co2.png" id="9_tj8fi"]
+[ext_resource type="Script" uid="uid://813oxwu58wr3" path="res://intro_assets/scenes/gen.gd" id="10_kmo8u"]
+[ext_resource type="Script" uid="uid://xqdr8mmw7u4v" path="res://intro_assets/scenes/greenhouse_Script.gd" id="10_pibgp"]
+[ext_resource type="Texture2D" uid="uid://uenkfk75brkt" path="res://intro_assets/scenes/greenhouse (2).png" id="11_pibgp"]
+[ext_resource type="Script" uid="uid://8x67r028ei24" path="res://intro_assets/scenes/co_22.gd" id="12_tj8fi"]
+[ext_resource type="Script" uid="uid://ddr2854b4tqj0" path="res://intro_assets/scenes/greeenhouse.gd" id="13_sstdt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qklxm"]
+size = Vector2(522, 395)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pibgp"]
+size = Vector2(377, 68.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ca1y"]
+size = Vector2(208, 168.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_muy1y"]
+size = Vector2(297, 247)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8pyf2"]
+size = Vector2(52, 281)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0af0t"]
+size = Vector2(261, 228)
+
+[node name="RepairedLss" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer"]
+position = Vector2(643, 361)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CanvasLayer/Camera2D"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -643.0
+offset_top = -361.0
+offset_right = 637.0
+offset_bottom = 359.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+stream = ExtResource("1_s5f0t")
+autoplay = true
+expand = true
+loop = true
+
+[node name="Area2D" type="Area2D" parent="CanvasLayer"]
+script = ExtResource("6_j8ue0")
+
+[node name="bio" type="CollisionShape2D" parent="CanvasLayer/Area2D"]
+position = Vector2(270, 199.5)
+shape = SubResource("RectangleShape2D_qklxm")
+
+[node name="tocockpit" type="CollisionShape2D" parent="CanvasLayer/Area2D"]
+position = Vector2(706.5, 689.25)
+shape = SubResource("RectangleShape2D_pibgp")
+
+[node name="power" type="CollisionShape2D" parent="CanvasLayer/Area2D"]
+position = Vector2(1116, 274.25)
+shape = SubResource("RectangleShape2D_0ca1y")
+
+[node name="co2" type="CollisionShape2D" parent="CanvasLayer/Area2D"]
+position = Vector2(860, 253)
+shape = SubResource("RectangleShape2D_muy1y")
+
+[node name="togalley" type="CollisionShape2D" parent="CanvasLayer/Area2D"]
+position = Vector2(1252, 460.5)
+shape = SubResource("RectangleShape2D_8pyf2")
+
+[node name="algae" type="TextureRect" parent="CanvasLayer/Area2D"]
+offset_left = 251.0
+offset_top = -138.0
+offset_right = 577.0
+offset_bottom = 297.0
+mouse_filter = 2
+texture = ExtResource("7_6pxe6")
+expand_mode = 1
+script = ExtResource("8_6pxe6")
+
+[node name="gen" type="TextureRect" parent="CanvasLayer/Area2D"]
+offset_left = 992.0
+offset_right = 1288.0
+offset_bottom = 420.0
+mouse_filter = 2
+texture = ExtResource("8_kmo8u")
+expand_mode = 1
+script = ExtResource("10_kmo8u")
+
+[node name="co22" type="TextureRect" parent="CanvasLayer/Area2D"]
+offset_left = 714.0
+offset_top = -122.0
+offset_right = 1012.0
+offset_bottom = 326.0
+mouse_filter = 2
+texture = ExtResource("9_tj8fi")
+expand_mode = 1
+script = ExtResource("12_tj8fi")
+
+[node name="Gamesound" type="AudioStreamPlayer" parent="CanvasLayer/Area2D"]
+stream = ExtResource("5_qklxm")
+autoplay = true
+
+[node name="greenhouse" type="TextureRect" parent="CanvasLayer"]
+offset_left = 226.0
+offset_top = 427.0
+offset_right = 552.0
+offset_bottom = 742.0
+texture = ExtResource("4_n31mr")
+expand_mode = 1
+
+[node name="Area2D" type="Area2D" parent="CanvasLayer/greenhouse"]
+script = ExtResource("10_pibgp")
+
+[node name="green" type="CollisionShape2D" parent="CanvasLayer/greenhouse/Area2D"]
+position = Vector2(144.5, 141)
+shape = SubResource("RectangleShape2D_0af0t")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/greenhouse/Area2D"]
+z_index = 2
+z_as_relative = false
+offset_left = -41.0
+offset_top = -251.0
+offset_right = 285.0
+offset_bottom = 203.0
+texture = ExtResource("11_pibgp")
+expand_mode = 1
+script = ExtResource("13_sstdt")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer2"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="Lamp1" parent="CanvasLayer2/Control" instance=ExtResource("2_hgwjn")]
+z_index = -5
+position = Vector2(185, 322)
+
+[node name="Lamp2" parent="CanvasLayer2/Control" instance=ExtResource("3_n31mr")]
+z_index = -7
+position = Vector2(524, 322)

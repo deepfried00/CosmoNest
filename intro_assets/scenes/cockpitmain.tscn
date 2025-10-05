@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://fybdbhyw8x8a"]
+
+[ext_resource type="VideoStream" uid="uid://i0tev5e8poms" path="res://intro_assets/scenes/10000159311-ezgif.com-video-to-mp4-converter.ogv" id="2_5aprs"]
+[ext_resource type="Script" uid="uid://8t14ws4b4d3c" path="res://intro_assets/scenes/cockpilss.gd" id="2_qf20c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5kvan"]
+size = Vector2(639, 118)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qf20c"]
+size = Vector2(63, 269)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5aprs"]
+size = Vector2(369.75, 51.25)
+
+[node name="TestVid" type="Node2D"]
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CanvasLayer2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+stream = ExtResource("2_5aprs")
+autoplay = true
+expand = true
+loop = true
+
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer2/VideoStreamPlayer"]
+position = Vector2(640, 363)
+
+[node name="Area2D" type="Area2D" parent="CanvasLayer2"]
+script = ExtResource("2_qf20c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer2/Area2D"]
+position = Vector2(954.5, 57)
+shape = SubResource("RectangleShape2D_5kvan")
+
+[node name="storage" type="CollisionShape2D" parent="CanvasLayer2/Area2D"]
+position = Vector2(1245.5, 346.5)
+shape = SubResource("RectangleShape2D_qf20c")
+
+[node name="hyg" type="CollisionShape2D" parent="CanvasLayer2/Area2D"]
+position = Vector2(1072.875, 693.625)
+shape = SubResource("RectangleShape2D_5aprs")
