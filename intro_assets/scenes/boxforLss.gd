@@ -30,6 +30,7 @@ func _on_click(viewport, event, shape_idx):
 					
 			"CollisionShape2D":
 				print("repairing") 
+				repair_lss()
 				Transition.transition_to_scene("res://intro_assets/scenes/repairedlss_scene1.tscn")
 			"toCockpit": 
 				print("Back to cockpit") 
@@ -37,3 +38,9 @@ func _on_click(viewport, event, shape_idx):
 			"togallery": 
 				print("To gallery") 
 				Transition.transition_to_scene("res://intro_assets/scenes/gallery.tscn")
+# Update the room state when repaired
+# Inside repaired_lss.gd (this part is triggered when repairing the room)
+func repair_lss():
+	RoomStateManager.set_room_state("lss", true)  # Set the state to repaired
+	RoomStateManager.set_room_visited_in_order("lss")  # Mark the room as visited in correct order
+	print("LSS has been repaired and room state updated.")  # Debugging line

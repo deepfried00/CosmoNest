@@ -37,4 +37,4 @@ func _on_click(viewport, event, shape_idx):
 			"tocockpit":
 				print("was clicked")
 				bgm_player.stop() 
-				Transition.transition_to_scene("res://intro_assets/scenes/cockpitmain.tscn")					
+				Transition.transition_to_scene("res://intro_assets/scenes/cockpitmain.tscn") 
