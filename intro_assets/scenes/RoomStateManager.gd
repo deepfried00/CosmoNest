@@ -21,6 +21,13 @@ var cutscene_played = {
 	"lss_fixed": false,
 	"storage_broken": false,
 	"storage_fixed": false,
+	"kitchen_broken": false,
+	"kitchen_fixed": false,
+	"hygiene_broken": false,
+	"hygiene_fixed": false,
+	"crew_broken": false,
+	"crew_fixed": false,
+	
 	# Continue for all rooms
 }
 

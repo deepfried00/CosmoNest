@@ -26,6 +26,10 @@ func _on_click(viewport, event, shape_idx):
 				Transition.transition_to_scene("res://intro_assets/scenes/cockpitmain.tscn")
 			"repair":
 				print("repairing")
+				repair_hyg()
 				Transition.transition_to_scene("res://intro_assets/scenes/repairedHyg_Scene.tscn")
 				
-					
+func repair_hyg():
+	RoomStateManager.set_room_state("hygiene", true)  # Set the state to repaired
+	RoomStateManager.set_room_visited_in_order("hygiene")  # Mark the room as visited in correct order
+	print("HYG has been repaired and room state updated.")  # Debugging line

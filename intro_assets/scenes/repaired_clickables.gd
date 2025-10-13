@@ -32,9 +32,40 @@ func _on_click(viewport, event, shape_idx):
 			"co2":
 				co22.visible = true
 			"togalley":
-				Transition.transition_to_scene("res://intro_assets/scenes/theungalley_scene1.tscn")
-				bgm_player.stop() 
+				_handle_storage_transition()
+
 			"tocockpit":
-				print("was clicked")
+				print("Was clicked")
 				bgm_player.stop() 
-				Transition.transition_to_scene("res://intro_assets/scenes/cockpitmain.tscn") 
+				Transition.transition_to_scene("res://intro_assets/scenes/cockpitmain.tscn")
+				
+func _handle_storage_transition():
+	# Ensure LSS has been repaired before accessing Storage
+	if RoomStateManager.get_room_state("lss"):  # Check if LSS is repaired (true)
+		if RoomStateManager.get_room_state("storage"):
+			if RoomStateManager.can_visit_room_in_order("kitchen"):
+				print("Transitioning to kitchen room...")  # Debugging line to ensure it's transitioning
+			
+			# If Storage is repaired (true), transition to the repaired storage scene
+				if RoomStateManager.get_room_state("kitchen"):  # If Storage is repaired (true)
+					if not RoomStateManager.has_cutscene_played("kitchen", "fixed"):
+						RoomStateManager.set_cutscene_played("kitchen", "fixed", true)
+						Transition.transition_to_scene("res://intro_assets/scenes/kitchenrepaired.tscn")
+					else:
+						Transition.transition_to_scene("res://intro_assets/scenes/kitchenrepaired.tscn")  # Repaired scene (no cutscene)
+				else:  # If Storage is still broken (false)
+					if not RoomStateManager.has_cutscene_played("kitchen", "broken"):
+						RoomStateManager.set_cutscene_played("kitchen", "broken", true)
+						Transition.transition_to_scene("res://intro_assets/scenes/theungalley_scene1.tscn")
+					else:
+						Transition.transition_to_scene("res://intro_assets/scenes/theungalley.tscn")  # Unrepaired scene (no cutscene)
+			
+			# Mark Storage as visited in correct order AFTER the transition
+				RoomStateManager.set_room_visited_in_order("kitchen")
+			
+			# After repairing Storage, allow access to Kitchen
+				RoomStateManager.set_room_visited_in_order("hygiene") 
+			else:
+				print("You cannot visit kitchen yet. Follow the story flow.")
+		else:
+			print("You cannot access kitchen until you have repaired Storage.")
