@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://do4t0lpeoap8"]
+
+[ext_resource type="Script" uid="uid://cwe5jglywtapf" path="res://intro_assets/scenes/engine/engine_scene.gd" id="1_b7bfr"]
+[ext_resource type="PackedScene" uid="uid://cpyh6a0x4pxv7" path="res://intro_assets/scenes/engine/engine.tscn" id="1_tru00"]
+[ext_resource type="PackedScene" uid="uid://kcqc2svluacg" path="res://intro_assets/scenes/robodim.tscn" id="2_b7bfr"]
+[ext_resource type="Texture2D" uid="uid://c05hq0ci2orvm" path="res://intro_assets/scenes/textbox.png" id="3_otgbc"]
+[ext_resource type="AudioStream" uid="uid://chqxnrn7wflmr" path="res://intro_assets/sound/Voice.mp3" id="4_gv5fy"]
+
+[node name="EngineScene" type="Node2D"]
+script = ExtResource("1_b7bfr")
+
+[node name="UnrepEngine" parent="." instance=ExtResource("1_tru00")]
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer2"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Robodim" parent="CanvasLayer2/Control" instance=ExtResource("2_b7bfr")]
+position = Vector2(318, 608)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer2"]
+offset_left = 198.0
+offset_top = 145.0
+offset_right = 472.0
+offset_bottom = 440.0
+texture = ExtResource("3_otgbc")
+expand_mode = 1
+flip_h = true
+
+[node name="Voice" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_gv5fy")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchor_left = 0.257
+anchor_top = 0.39100003
+anchor_right = 0.257
+anchor_bottom = 0.39100003
+offset_left = -91.95999
+offset_top = -96.52002
+offset_right = 92.04001
+offset_bottom = 96.47998
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.48600003
+anchor_top = 0.5
+anchor_right = 0.48600003
+anchor_bottom = 0.5
+offset_left = -89.423996
+offset_top = -77.5
+offset_right = 93.576
+offset_bottom = 89.5
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true

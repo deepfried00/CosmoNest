@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Transition="*res://intro_assets/scenes/transition.tscn"
 AnimatedTexts="*res://intro_assets/scenes/AnimatedTexts.tscn"
 RoomStateManager="*res://intro_assets/scenes/RoomStateManager.gd"
+SaveManagerMessGame="*res://intro_assets/scenes/SaveManager.gd"
 
 [display]
 

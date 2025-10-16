@@ -27,6 +27,12 @@ var cutscene_played = {
 	"hygiene_fixed": false,
 	"crew_broken": false,
 	"crew_fixed": false,
+	"science_broken": false,
+	"science_fixed": false,
+	"engine_broken": false,
+	"engine_fixed": false,
+	"mess_broken": false,
+	"mess_fixed": false,
 	
 	# Continue for all rooms
 }
@@ -41,7 +47,7 @@ var room_progress = {
 	"crew": 0,
 	"science": 0,
 	"engine": 0,
-	"mess": 0
+	"mess": 1
 }
 
 # Set the state of a room (fixed or broken)

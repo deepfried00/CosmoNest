@@ -1,0 +1,525 @@
+[gd_scene load_steps=31 format=3 uid="uid://cjvjg3ecv4ui4"]
+
+[ext_resource type="Texture2D" uid="uid://bslghrcxvs0k6" path="res://intro_assets/scenes/mass/Mess room def.png" id="1_5ckpx"]
+[ext_resource type="Script" uid="uid://b16hwtsp2fhaj" path="res://intro_assets/scenes/mass/base_mass.gd" id="1_xmh1e"]
+[ext_resource type="Texture2D" uid="uid://3hopnpi7omta" path="res://intro_assets/scenes/mass/1000015850-removebg-preview.png" id="2_148mb"]
+[ext_resource type="Script" uid="uid://djy5ic72tnoue" path="res://intro_assets/scenes/mass/doorsformess.gd" id="2_w4twc"]
+[ext_resource type="Script" uid="uid://do1wielax6v34" path="res://intro_assets/scenes/mass/game.gd" id="3_5ckpx"]
+[ext_resource type="Texture2D" uid="uid://bljqi6p1mouxq" path="res://intro_assets/scenes/crew/crewnote.png" id="3_148mb"]
+[ext_resource type="Script" uid="uid://c26vlvqn0dmpq" path="res://intro_assets/scenes/mass/note_2.gd" id="5_o0bp6"]
+[ext_resource type="Texture2D" uid="uid://5lblvp6jv0wp" path="res://intro_assets/scenes/mass/Reset-removebg-preview.png" id="6_dsqw7"]
+[ext_resource type="Texture2D" uid="uid://3w0towrjvlu1" path="res://intro_assets/scenes/mass/1000015835.png" id="7_5kifn"]
+[ext_resource type="Script" uid="uid://wqyuqwnhne4s" path="res://intro_assets/scenes/mass/area_2d_3.gd" id="7_xem00"]
+[ext_resource type="Texture2D" uid="uid://c54apxwdcdjpe" path="res://intro_assets/scenes/mass/1000015867-removebg-preview.png" id="8_xem00"]
+[ext_resource type="Texture2D" uid="uid://d12msnsxjkaw4" path="res://intro_assets/scenes/mass/1000015845-removebg-preview.png" id="9_47cay"]
+[ext_resource type="Script" uid="uid://bnl0mg81qui62" path="res://intro_assets/scenes/mass/area_2d_4.gd" id="9_h4oav"]
+[ext_resource type="Texture2D" uid="uid://bfg6baypquol5" path="res://intro_assets/scenes/mass/1000015851-removebg-preview.png" id="10_h4oav"]
+[ext_resource type="Script" uid="uid://cxrbey0w3vyx4" path="res://intro_assets/scenes/mass/area_2d_5.gd" id="11_h4oav"]
+[ext_resource type="Texture2D" uid="uid://bf62fnknrd311" path="res://intro_assets/scenes/mass/1000015857-removebg-preview.png" id="11_nv1j1"]
+[ext_resource type="Script" uid="uid://ckohvq8uyf73r" path="res://intro_assets/scenes/mass/area_2d_6.gd" id="13_nv1j1"]
+[ext_resource type="Script" uid="uid://cabq3erluwq0h" path="res://intro_assets/scenes/mass/area_2d_7.gd" id="15_dsqw7"]
+[ext_resource type="Script" uid="uid://fxqmjmpxbn6w" path="res://intro_assets/scenes/mass/wall.gd" id="18_o0bp6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1wd4j"]
+size = Vector2(388.75, 44.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_twk54"]
+size = Vector2(226.5, 113)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0if72"]
+size = Vector2(257, 365)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pdihy"]
+size = Vector2(102, 46.75)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5kifn"]
+radius = 101.4002
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xem00"]
+size = Vector2(294, 198)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_47cay"]
+radius = 118.19052
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h4oav"]
+size = Vector2(237, 299.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_034y2"]
+size = Vector2(81, 228)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dmsqg"]
+size = Vector2(404, 122)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_adiuk"]
+size = Vector2(182, 64)
+
+[node name="BaseMass" type="Node2D"]
+script = ExtResource("1_xmh1e")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -656.0
+offset_top = -356.0
+offset_right = 624.0
+offset_bottom = 364.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_5ckpx")
+expand_mode = 1
+
+[node name="Area2D" type="Area2D" parent="CanvasLayer"]
+script = ExtResource("2_w4twc")
+
+[node name="engine" type="CollisionShape2D" parent="CanvasLayer/Area2D"]
+position = Vector2(688, 694)
+shape = SubResource("RectangleShape2D_1wd4j")
+
+[node name="note" type="CollisionShape2D" parent="CanvasLayer/Area2D"]
+position = Vector2(471.75, 102.5)
+shape = SubResource("RectangleShape2D_twk54")
+
+[node name="note2" type="TextureRect" parent="CanvasLayer/Area2D"]
+visible = false
+offset_left = 338.0
+offset_top = 138.0
+offset_right = 632.0
+offset_bottom = 524.0
+texture = ExtResource("3_148mb")
+expand_mode = 1
+script = ExtResource("5_o0bp6")
+
+[node name="Area2D2" type="Area2D" parent="CanvasLayer"]
+position = Vector2(-21, -61)
+script = ExtResource("3_5ckpx")
+
+[node name="gamee" type="Sprite2D" parent="CanvasLayer/Area2D2"]
+position = Vector2(235.99998, 226.00002)
+scale = Vector2(0.988, 1.004)
+texture = ExtResource("2_148mb")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="CanvasLayer/Area2D2/gamee"]
+
+[node name="Control" type="Control" parent="CanvasLayer/Area2D2/gamee/CanvasLayer2"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="reset" type="Button" parent="CanvasLayer/Area2D2/gamee/CanvasLayer2/Control"]
+layout_mode = 0
+offset_left = -902.0
+offset_top = 239.0
+offset_right = -851.0
+offset_bottom = 283.0
+mouse_filter = 2
+text = "Reset"
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Area2D2/gamee/CanvasLayer2/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorPicker" type="ColorPicker" parent="CanvasLayer/Area2D2/gamee/CanvasLayer2/Control"]
+visible = false
+layout_mode = 0
+offset_left = -166.0
+offset_top = -323.0
+offset_right = 132.0
+offset_bottom = 284.0
+mouse_filter = 2
+
+[node name="game" type="CollisionShape2D" parent="CanvasLayer/Area2D2"]
+position = Vector2(231, 261)
+shape = SubResource("RectangleShape2D_0if72")
+
+[node name="button" type="TextureRect" parent="CanvasLayer/Area2D2"]
+offset_left = 331.0
+offset_top = 494.0
+offset_right = 437.0
+offset_bottom = 539.0
+texture = ExtResource("6_dsqw7")
+expand_mode = 1
+
+[node name="reset" type="CollisionShape2D" parent="CanvasLayer/Area2D2"]
+position = Vector2(393, 517)
+shape = SubResource("RectangleShape2D_pdihy")
+
+[node name="Area2D3" type="Area2D" parent="CanvasLayer"]
+script = ExtResource("7_xem00")
+
+[node name="sofa2" type="Sprite2D" parent="CanvasLayer/Area2D3"]
+position = Vector2(981, 205)
+scale = Vector2(0.316875, 0.301875)
+texture = ExtResource("7_5kifn")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="CanvasLayer/Area2D3/sofa2"]
+
+[node name="Control" type="Control" parent="CanvasLayer/Area2D3/sofa2/CanvasLayer2"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="reset" type="Button" parent="CanvasLayer/Area2D3/sofa2/CanvasLayer2/Control"]
+layout_mode = 0
+offset_left = -902.0
+offset_top = 239.0
+offset_right = -851.0
+offset_bottom = 283.0
+mouse_filter = 2
+text = "Reset"
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Area2D3/sofa2/CanvasLayer2/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorPicker" type="ColorPicker" parent="CanvasLayer/Area2D3/sofa2/CanvasLayer2/Control"]
+visible = false
+layout_mode = 0
+offset_left = -438.0
+offset_top = -316.0
+offset_right = -140.0
+offset_bottom = 291.0
+mouse_filter = 2
+
+[node name="spfa23" type="CollisionShape2D" parent="CanvasLayer/Area2D3"]
+position = Vector2(994, 235)
+shape = SubResource("CircleShape2D_5kifn")
+
+[node name="button" type="TextureRect" parent="CanvasLayer/Area2D3"]
+offset_left = 616.0
+offset_top = 430.0
+offset_right = 720.0
+offset_bottom = 473.0
+texture = ExtResource("6_dsqw7")
+expand_mode = 1
+
+[node name="reset" type="CollisionShape2D" parent="CanvasLayer/Area2D3"]
+position = Vector2(673, 452)
+shape = SubResource("RectangleShape2D_pdihy")
+
+[node name="Area2D4" type="Area2D" parent="CanvasLayer"]
+script = ExtResource("9_h4oav")
+
+[node name="mat" type="Sprite2D" parent="CanvasLayer/Area2D4"]
+modulate = Color(0.49457324, 0.54428667, 0.7259159, 1)
+position = Vector2(899.99994, 385.99994)
+scale = Vector2(1.5827138, 1.4079217)
+texture = ExtResource("8_xem00")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="CanvasLayer/Area2D4/mat"]
+
+[node name="Control" type="Control" parent="CanvasLayer/Area2D4/mat/CanvasLayer2"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="reset" type="Button" parent="CanvasLayer/Area2D4/mat/CanvasLayer2/Control"]
+layout_mode = 0
+offset_left = -902.0
+offset_top = 239.0
+offset_right = -851.0
+offset_bottom = 283.0
+mouse_filter = 2
+text = "Reset"
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Area2D4/mat/CanvasLayer2/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorPicker" type="ColorPicker" parent="CanvasLayer/Area2D4/mat/CanvasLayer2/Control"]
+visible = false
+layout_mode = 0
+offset_left = -211.0
+offset_top = -326.0
+offset_right = 87.0
+offset_bottom = 281.0
+mouse_filter = 2
+
+[node name="mat2" type="CollisionShape2D" parent="CanvasLayer/Area2D4"]
+position = Vector2(915, 445)
+shape = SubResource("RectangleShape2D_xem00")
+
+[node name="button" type="TextureRect" parent="CanvasLayer/Area2D4"]
+offset_left = 285.0
+offset_top = 560.0
+offset_right = 389.0
+offset_bottom = 603.0
+texture = ExtResource("6_dsqw7")
+expand_mode = 1
+
+[node name="reset" type="CollisionShape2D" parent="CanvasLayer/Area2D4"]
+position = Vector2(336, 581)
+shape = SubResource("RectangleShape2D_pdihy")
+
+[node name="Area2D5" type="Area2D" parent="CanvasLayer"]
+script = ExtResource("11_h4oav")
+
+[node name="sofa1" type="Sprite2D" parent="CanvasLayer/Area2D5"]
+position = Vector2(1229, 353)
+scale = Vector2(0.86418754, 0.8516873)
+texture = ExtResource("9_47cay")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="CanvasLayer/Area2D5/sofa1"]
+
+[node name="Control" type="Control" parent="CanvasLayer/Area2D5/sofa1/CanvasLayer2"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="reset" type="Button" parent="CanvasLayer/Area2D5/sofa1/CanvasLayer2/Control"]
+layout_mode = 0
+offset_left = -902.0
+offset_top = 239.0
+offset_right = -851.0
+offset_bottom = 283.0
+mouse_filter = 2
+text = "Reset"
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Area2D5/sofa1/CanvasLayer2/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorPicker" type="ColorPicker" parent="CanvasLayer/Area2D5/sofa1/CanvasLayer2/Control"]
+visible = false
+layout_mode = 0
+offset_left = -211.0
+offset_top = -339.0
+offset_right = 87.0
+offset_bottom = 268.0
+mouse_filter = 2
+
+[node name="sofa" type="CollisionShape2D" parent="CanvasLayer/Area2D5"]
+position = Vector2(1216, 397)
+shape = SubResource("CircleShape2D_47cay")
+
+[node name="button" type="TextureRect" parent="CanvasLayer/Area2D5"]
+offset_left = 738.0
+offset_top = 576.0
+offset_right = 842.0
+offset_bottom = 619.0
+texture = ExtResource("6_dsqw7")
+expand_mode = 1
+
+[node name="reset" type="CollisionShape2D" parent="CanvasLayer/Area2D5"]
+position = Vector2(787, 597)
+shape = SubResource("RectangleShape2D_pdihy")
+
+[node name="Area2D6" type="Area2D" parent="CanvasLayer"]
+script = ExtResource("13_nv1j1")
+
+[node name="bigguy" type="Sprite2D" parent="CanvasLayer/Area2D6"]
+position = Vector2(721, 136)
+scale = Vector2(0.91609365, 0.8658437)
+texture = ExtResource("10_h4oav")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="CanvasLayer/Area2D6/bigguy"]
+
+[node name="Control" type="Control" parent="CanvasLayer/Area2D6/bigguy/CanvasLayer2"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="reset" type="Button" parent="CanvasLayer/Area2D6/bigguy/CanvasLayer2/Control"]
+layout_mode = 0
+offset_left = -902.0
+offset_top = 239.0
+offset_right = -851.0
+offset_bottom = 283.0
+mouse_filter = 2
+text = "Reset"
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Area2D6/bigguy/CanvasLayer2/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorPicker" type="ColorPicker" parent="CanvasLayer/Area2D6/bigguy/CanvasLayer2/Control"]
+visible = false
+layout_mode = 0
+offset_left = -462.0
+offset_top = -274.0
+offset_right = -164.0
+offset_bottom = 333.0
+mouse_filter = 2
+
+[node name="bigguy2" type="CollisionShape2D" parent="CanvasLayer/Area2D6"]
+position = Vector2(703, 144.75)
+shape = SubResource("RectangleShape2D_h4oav")
+
+[node name="button" type="TextureRect" parent="CanvasLayer/Area2D6"]
+offset_left = 518.0
+offset_top = 538.0
+offset_right = 622.0
+offset_bottom = 581.0
+texture = ExtResource("6_dsqw7")
+expand_mode = 1
+
+[node name="reset" type="CollisionShape2D" parent="CanvasLayer/Area2D6"]
+position = Vector2(568, 559)
+shape = SubResource("RectangleShape2D_pdihy")
+
+[node name="Area2D7" type="Area2D" parent="CanvasLayer"]
+script = ExtResource("15_dsqw7")
+
+[node name="mech" type="Sprite2D" parent="CanvasLayer/Area2D7"]
+position = Vector2(1051.2618, 537.23047)
+scale = Vector2(0.83704716, 0.76892185)
+texture = ExtResource("11_nv1j1")
+flip_h = true
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="CanvasLayer/Area2D7/mech"]
+
+[node name="Control" type="Control" parent="CanvasLayer/Area2D7/mech/CanvasLayer2"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="reset" type="Button" parent="CanvasLayer/Area2D7/mech/CanvasLayer2/Control"]
+layout_mode = 0
+offset_left = -902.0
+offset_top = 239.0
+offset_right = -851.0
+offset_bottom = 283.0
+mouse_filter = 2
+text = "Reset"
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Area2D7/mech/CanvasLayer2/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorPicker" type="ColorPicker" parent="CanvasLayer/Area2D7/mech/CanvasLayer2/Control"]
+visible = false
+layout_mode = 0
+offset_left = -380.0
+offset_top = -280.0
+offset_right = -82.0
+offset_bottom = 327.0
+mouse_filter = 2
+
+[node name="tred" type="CollisionShape2D" parent="CanvasLayer/Area2D7"]
+position = Vector2(1058, 718)
+shape = SubResource("RectangleShape2D_0if72")
+
+[node name="button" type="TextureRect" parent="CanvasLayer/Area2D7"]
+offset_left = 124.0
+offset_top = 519.0
+offset_right = 228.0
+offset_bottom = 562.0
+texture = ExtResource("6_dsqw7")
+expand_mode = 1
+
+[node name="reset" type="CollisionShape2D" parent="CanvasLayer/Area2D7"]
+position = Vector2(174, 544)
+shape = SubResource("RectangleShape2D_pdihy")
+
+[node name="wall" type="Area2D" parent="CanvasLayer"]
+script = ExtResource("18_o0bp6")
+
+[node name="left" type="CollisionShape2D" parent="CanvasLayer/wall"]
+position = Vector2(30.5, 104)
+shape = SubResource("RectangleShape2D_034y2")
+
+[node name="right" type="CollisionShape2D" parent="CanvasLayer/wall"]
+position = Vector2(1052, 71)
+shape = SubResource("RectangleShape2D_dmsqg")
+
+[node name="mid" type="CollisionShape2D" parent="CanvasLayer/wall"]
+position = Vector2(455, 194)
+shape = SubResource("RectangleShape2D_adiuk")
+
+[node name="mid2" type="CollisionShape2D" parent="CanvasLayer/wall"]
+position = Vector2(465, 8)
+shape = SubResource("RectangleShape2D_adiuk")
+
+[node name="mid3" type="CollisionShape2D" parent="CanvasLayer/wall"]
+position = Vector2(1194, 174)
+shape = SubResource("RectangleShape2D_adiuk")
+
+[connection signal="pressed" from="CanvasLayer/Area2D2/gamee/CanvasLayer2/Control/reset" to="CanvasLayer/Area2D2" method="_on_reset_pressed"]
+[connection signal="pressed" from="CanvasLayer/Area2D2/gamee/CanvasLayer2/Control/TextureButton" to="CanvasLayer/Area2D" method="_on_texture_button_pressed"]
+[connection signal="color_changed" from="CanvasLayer/Area2D2/gamee/CanvasLayer2/Control/ColorPicker" to="CanvasLayer/Area2D" method="_on_color_picker_color_changed"]
+[connection signal="pressed" from="CanvasLayer/Area2D3/sofa2/CanvasLayer2/Control/reset" to="CanvasLayer/Area2D3" method="_on_reset_pressed"]
+[connection signal="color_changed" from="CanvasLayer/Area2D3/sofa2/CanvasLayer2/Control/ColorPicker" to="CanvasLayer/Area2D3" method="_on_color_picker_color_changed"]
+[connection signal="wall_clicked" from="CanvasLayer/wall" to="." method="_on_wall_wall_clicked"]

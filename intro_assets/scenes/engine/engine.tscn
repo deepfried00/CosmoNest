@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://cpyh6a0x4pxv7"]
+
+[ext_resource type="Texture2D" uid="uid://ckfntyxa30ldy" path="res://intro_assets/scenes/engine/1000016151.webp" id="1_2jlvj"]
+[ext_resource type="Script" uid="uid://c6dgf43jv38dh" path="res://intro_assets/scenes/engine/unrepenginr_clickables.gd" id="2_gsehu"]
+[ext_resource type="Texture2D" uid="uid://dhfxgkjcy6hs5" path="res://intro_assets/scenes/Ahoy_-removebg-preview.png" id="3_elyv7"]
+[ext_resource type="Script" uid="uid://dbbptultyj13g" path="res://intro_assets/scenes/picnote.gd" id="4_cfhbh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_elyv7"]
+size = Vector2(306, 65.125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hcsor"]
+size = Vector2(301.5, 44.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gsehu"]
+size = Vector2(239, 118)
+
+[node name="UnrepEngine" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_2jlvj")
+expand_mode = 1
+
+[node name="Area2D" type="Area2D" parent="CanvasLayer"]
+script = ExtResource("2_gsehu")
+
+[node name="mess" type="CollisionShape2D" parent="CanvasLayer/Area2D"]
+position = Vector2(412, 19)
+shape = SubResource("RectangleShape2D_elyv7")
+
+[node name="work" type="CollisionShape2D" parent="CanvasLayer/Area2D"]
+position = Vector2(429, 692)
+shape = SubResource("RectangleShape2D_hcsor")
+
+[node name="note" type="CollisionShape2D" parent="CanvasLayer/Area2D"]
+position = Vector2(422.5, 121)
+shape = SubResource("RectangleShape2D_gsehu")
+
+[node name="note2" type="TextureRect" parent="CanvasLayer/Area2D"]
+offset_left = 558.0
+offset_top = -33.0
+offset_right = 974.0
+offset_bottom = 567.0
+texture = ExtResource("3_elyv7")
+expand_mode = 1
+script = ExtResource("4_cfhbh")

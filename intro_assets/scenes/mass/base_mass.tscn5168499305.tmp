@@ -1,0 +1,100 @@
+[gd_scene load_steps=9 format=3 uid="uid://cjvjg3ecv4ui4"]
+
+[ext_resource type="Texture2D" uid="uid://btprphwwunax8" path="res://intro_assets/scenes/mass/unnamed (1).jpeg" id="1_w4twc"]
+[ext_resource type="Texture2D" uid="uid://3hopnpi7omta" path="res://intro_assets/scenes/mass/1000015850-removebg-preview.png" id="2_148mb"]
+[ext_resource type="Script" uid="uid://do1wielax6v34" path="res://intro_assets/scenes/mass/game.gd" id="3_5ckpx"]
+[ext_resource type="Script" uid="uid://cnfj0t78uvthw" path="res://intro_assets/scenes/mass/messroom.gd" id="3_w4twc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ckpx"]
+size = Vector2(70, 179.5625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1wd4j"]
+size = Vector2(388.75, 44.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_twk54"]
+size = Vector2(226.5, 113)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0if72"]
+size = Vector2(234, 358)
+
+[node name="BaseMass" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_w4twc")
+expand_mode = 1
+
+[node name="Area2D" type="Area2D" parent="CanvasLayer"]
+script = ExtResource("3_w4twc")
+
+[node name="mess" type="CollisionShape2D" parent="CanvasLayer/Area2D"]
+position = Vector2(26, 480.21875)
+shape = SubResource("RectangleShape2D_5ckpx")
+
+[node name="work" type="CollisionShape2D" parent="CanvasLayer/Area2D"]
+position = Vector2(695.625, 699)
+shape = SubResource("RectangleShape2D_1wd4j")
+
+[node name="note" type="CollisionShape2D" parent="CanvasLayer/Area2D"]
+position = Vector2(471.75, 102.5)
+shape = SubResource("RectangleShape2D_twk54")
+
+[node name="Area2D2" type="Area2D" parent="CanvasLayer"]
+position = Vector2(-33, -57)
+script = ExtResource("3_5ckpx")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Area2D2"]
+offset_right = 500.0
+offset_bottom = 500.0
+texture = ExtResource("2_148mb")
+
+[node name="game" type="CollisionShape2D" parent="CanvasLayer/Area2D2"]
+position = Vector2(238, 285)
+shape = SubResource("RectangleShape2D_0if72")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="CanvasLayer/Area2D2"]
+
+[node name="Control" type="Control" parent="CanvasLayer/Area2D2/CanvasLayer2"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Area2D2/CanvasLayer2/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorPicker" type="ColorPicker" parent="CanvasLayer/Area2D2/CanvasLayer2/Control"]
+layout_mode = 0
+offset_left = 324.0
+offset_top = 39.0
+offset_right = 622.0
+offset_bottom = 646.0
+mouse_filter = 2
+
+[connection signal="pressed" from="CanvasLayer/Area2D2/CanvasLayer2/Control/TextureButton" to="CanvasLayer/Area2D" method="_on_texture_button_pressed"]
+[connection signal="color_changed" from="CanvasLayer/Area2D2/CanvasLayer2/Control/ColorPicker" to="CanvasLayer/Area2D" method="_on_color_picker_color_changed"]

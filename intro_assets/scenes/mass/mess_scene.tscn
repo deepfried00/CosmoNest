@@ -1,0 +1,88 @@
+[gd_scene load_steps=8 format=3 uid="uid://cwb7o68chv0tq"]
+
+[ext_resource type="Script" uid="uid://c4kmmldhiwo" path="res://intro_assets/scenes/mass/mess_scene.gd" id="1_4s88t"]
+[ext_resource type="PackedScene" uid="uid://cjvjg3ecv4ui4" path="res://intro_assets/scenes/mass/base_mass.tscn" id="2_oao84"]
+[ext_resource type="PackedScene" uid="uid://kcqc2svluacg" path="res://intro_assets/scenes/robodim.tscn" id="3_a4tea"]
+[ext_resource type="Texture2D" uid="uid://c05hq0ci2orvm" path="res://intro_assets/scenes/textbox.png" id="4_yt1n1"]
+[ext_resource type="AudioStream" uid="uid://chqxnrn7wflmr" path="res://intro_assets/sound/Voice.mp3" id="5_m5q5b"]
+[ext_resource type="Texture2D" uid="uid://doe5s5vkrum7" path="res://intro_assets/scenes/Yes_-removebg-preview.png" id="6_a4tea"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m5q5b"]
+size = Vector2(151, 38)
+
+[node name="MessScene" type="Node2D"]
+script = ExtResource("1_4s88t")
+
+[node name="BaseMass" parent="." instance=ExtResource("2_oao84")]
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer2"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Robodim" parent="CanvasLayer2/Control" instance=ExtResource("3_a4tea")]
+position = Vector2(55, 711)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer2"]
+offset_left = 146.0
+offset_top = 229.0
+offset_right = 420.0
+offset_bottom = 524.0
+texture = ExtResource("4_yt1n1")
+expand_mode = 1
+
+[node name="Voice" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_m5q5b")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchor_left = 0.23
+anchor_top = 0.5
+anchor_right = 0.23
+anchor_bottom = 0.5
+offset_left = -100.399994
+offset_top = -85.0
+offset_right = 83.600006
+offset_bottom = 108.0
+mouse_filter = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.47400004
+anchor_right = 0.5
+anchor_bottom = 0.47400004
+offset_left = -90.99999
+offset_top = -83.48201
+offset_right = 92.0
+offset_bottom = 83.51799
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+
+[node name="Area2D" type="Area2D" parent="CanvasLayer"]
+position = Vector2(189, 425)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Area2D"]
+offset_left = 138.0
+offset_top = 69.0
+offset_right = 221.0
+offset_bottom = 108.0
+mouse_filter = 2
+texture = ExtResource("6_a4tea")
+expand_mode = 1
+
+[node name="yes" type="CollisionShape2D" parent="CanvasLayer/Area2D"]
+position = Vector2(174, 88)
+shape = SubResource("RectangleShape2D_m5q5b")
+
+[connection signal="input_event" from="CanvasLayer/Area2D" to="." method="_on_area_2d_input_event"]

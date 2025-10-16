@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://5u2bdd66thvr"]
+
+[ext_resource type="Script" uid="uid://c1lix2oe8horg" path="res://intro_assets/scenes/color_ui.gd" id="1_b30uq"]
+[ext_resource type="Script" uid="uid://cnxbe0b0fhf8y" path="res://intro_assets/scenes/mass/control.gd" id="1_tvvbt"]
+
+[node name="ColorUi" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_b30uq")
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_tvvbt")
+
+[node name="ColorPicker" type="ColorPicker" parent="Control"]
+layout_mode = 0
+offset_right = 298.0
+offset_bottom = 607.0
+
+[node name="confirm" type="Button" parent="Control"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
