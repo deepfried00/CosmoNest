@@ -3,7 +3,6 @@ extends Node2D
 @onready var arrow_image = $Arrow
 @onready var typing_sound = $Voice
 @onready var text_label = $CanvasLayer/Control/RichTextLabel
-@onready var bgm_player = $Gamesound
 @onready var robodim = $CanvasLayer2/Control/Robodim/AnimatedSprite2D
 
 var dialogue_data = []
@@ -18,14 +17,13 @@ const FONT_PATH = "res://intro_assets/font/public-pixel-font/PublicPixel-rv0pA.t
 func _ready():
 	dialogue_data = load("res://intro_assets/scenes/cockpit_dialogues.gd").new().get_dialogue()
 	arrow_image.visible = false
-	bgm_player.play() 
+	MusicManager.set_music_state(true)
 	show_next_line()
 	robodim.play()
 
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		if dialogue_finished:
-			bgm_player.stop()  # Stop music when final click after dialogue
+		if dialogue_finished:  # Stop music when final click after dialogue
 			return
 
 		if is_typing:

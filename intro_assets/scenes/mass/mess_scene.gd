@@ -18,6 +18,7 @@ func _ready():
 	robodim.play()
 	yes_area.connect("input_event", Callable(self, "_on_yes_area_input_event"))
 	yes_area.visible = false
+	MusicManager.set_music_state(true)
 	show_next_line()
 
 func _input(event):
@@ -89,5 +90,5 @@ func _on_yes_area_input_event(viewport: Node, event: InputEvent, shape_idx: int)
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		print("Yes button clicked, transitioning to next scene.")
 		typing_sound.stop() # Stop sound on button press
-		Transition.transition_to_scene("res://intro_assets/scenes/mass/base_mass.tscn")
+		Transition.transition_to_scene("res://intro_assets/scenes/mass/mass_Entry_scene.tscn")
 		get_viewport().set_input_as_handled()

@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://5svgy2248u2a"]
+
+[ext_resource type="Script" uid="uid://dwq57aoyawymf" path="res://intro_assets/scenes/persistent_hud.gd" id="1_0n0pe"]
+[ext_resource type="Texture2D" uid="uid://dtj68o6ygdceu" path="res://intro_assets/scenes/menu.png" id="2_08xsl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_08xsl"]
+size = Vector2(86, 102.5)
+
+[node name="PersistentHud" type="CanvasLayer"]
+script = ExtResource("1_0n0pe")
+
+[node name="menu_button" type="Area2D" parent="."]
+
+[node name="icon" type="TextureRect" parent="menu_button"]
+offset_left = 1160.0
+offset_top = 593.0
+offset_right = 1292.0
+offset_bottom = 735.0
+mouse_filter = 2
+texture = ExtResource("2_08xsl")
+expand_mode = 1
+
+[node name="button" type="CollisionShape2D" parent="menu_button"]
+position = Vector2(1232, 660)
+shape = SubResource("RectangleShape2D_08xsl")
+
+[connection signal="input_event" from="menu_button" to="." method="_on_menu_button_input_event"]

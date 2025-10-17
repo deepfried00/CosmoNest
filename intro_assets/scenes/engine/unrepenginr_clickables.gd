@@ -3,6 +3,7 @@ extends Area2D
 
 func _ready():
 	connect("input_event", Callable(self, "_on_click"))
+	MusicManager.set_music_state(true)
 	note.visible = false
 
 	
@@ -42,15 +43,15 @@ func _handle_engine_transition():
 									if RoomStateManager.get_room_state("mess"):  # If Storage is repaired (true)
 										if not RoomStateManager.has_cutscene_played("mess", "fixed"):
 											RoomStateManager.set_cutscene_played("mess", "fixed", true)
-											Transition.transition_to_scene("res://intro_assets/scenes/mass/base_mass.tscn")
+											Transition.transition_to_scene("res://intro_assets/scenes/mass/mass_Entry_scene.tscn")
 										else:
-											Transition.transition_to_scene("res://intro_assets/scenes/mass/base_mass.tscn")  # Repaired scene (no cutscene)
+											Transition.transition_to_scene("res://intro_assets/scenes/mass/mass_Entry_scene.tscn")  # Repaired scene (no cutscene)
 									else:  # If Storage is still broken (false)
 										if not RoomStateManager.has_cutscene_played("mess", "broken"):
 											RoomStateManager.set_cutscene_played("mess", "broken", true)
 											Transition.transition_to_scene("res://intro_assets/scenes/mass/mess_scene.tscn")
 										else:
-											Transition.transition_to_scene("res://intro_assets/scenes/mass/base_mass.tscn")  # Unrepaired scene (no cutscene)
+											Transition.transition_to_scene("res://intro_assets/scenes/mass/mass_Entry_scene.tscn")  # Unrepaired scene (no cutscene)
 			
 			# Mark Storage as visited in correct order AFTER the transition
 									RoomStateManager.set_room_visited_in_order("mess")

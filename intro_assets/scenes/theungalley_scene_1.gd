@@ -20,6 +20,7 @@ const FONT_PATH = "res://intro_assets/font/public-pixel-font/PublicPixel-rv0pA.t
 func _ready():
 	dialogue_data = load("res://intro_assets/scenes/unrepairedgally_dialogues.gd").new().get_dialogue()
 	robodim.play()
+	MusicManager.set_music_state(false)
 	show_next_line()
 	
 

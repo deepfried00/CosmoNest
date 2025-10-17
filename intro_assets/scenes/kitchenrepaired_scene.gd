@@ -19,6 +19,7 @@ const FONT_PATH = "res://intro_assets/font/public-pixel-font/PublicPixel-rv0pA.t
 func _ready():
 	dialogue_data = load("res://intro_assets/scenes/repairedkitchen_dialogue.gd").new().get_dialogue()
 	robodim.play()
+	MusicManager.set_music_state(true)
 	show_next_line()
 
 	

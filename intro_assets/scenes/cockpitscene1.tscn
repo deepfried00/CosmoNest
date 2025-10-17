@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://ci7tgafrwepuy"]
+[gd_scene load_steps=7 format=3 uid="uid://ci7tgafrwepuy"]
 
 [ext_resource type="PackedScene" uid="uid://fybdbhyw8x8a" path="res://intro_assets/scenes/cockpitmain.tscn" id="1_68wft"]
 [ext_resource type="Script" uid="uid://blmb10bhu5aoq" path="res://intro_assets/scenes/cockpitscene_1.gd" id="1_qgnfg"]
 [ext_resource type="Texture2D" uid="uid://bvd0hoisix7pe" path="res://intro_assets/scenes/arrow.png" id="3_l0b21"]
-[ext_resource type="AudioStream" uid="uid://c346wxrqyakkj" path="res://intro_assets/sound/gamesound.mp3" id="4_ire4o"]
 [ext_resource type="AudioStream" uid="uid://chqxnrn7wflmr" path="res://intro_assets/sound/Voice.mp3" id="4_ptkq3"]
 [ext_resource type="Texture2D" uid="uid://c05hq0ci2orvm" path="res://intro_assets/scenes/textbox.png" id="7_1u8cl"]
 [ext_resource type="PackedScene" uid="uid://kcqc2svluacg" path="res://intro_assets/scenes/robodim.tscn" id="8_0p28i"]
@@ -18,10 +17,6 @@ position = Vector2(-112, 0)
 position = Vector2(882, 140)
 scale = Vector2(0.2730001, 0.28200004)
 texture = ExtResource("3_l0b21")
-
-[node name="Gamesound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_ire4o")
-autoplay = true
 
 [node name="Voice" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_ptkq3")

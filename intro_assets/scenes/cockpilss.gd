@@ -1,6 +1,7 @@
 extends Area2D
 
 func _ready():
+	MusicManager.set_music_state(true)
 	connect("input_event", Callable(self, "_on_click"))
 
 # Handle mouse click events

@@ -6,6 +6,7 @@ extends Area2D
 
 func _ready():
 	connect("input_event", Callable(self, "_on_click"))
+	MusicManager.set_music_state(true)
 	toilet.visible = false
 	bath.visible = false
 	sink.visible = false

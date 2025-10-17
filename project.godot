@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="CosmoNest!"
-run/main_scene="uid://bjvp3gi5hoovb"
+run/main_scene="uid://gj5u75jowqao"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -21,6 +21,9 @@ Transition="*res://intro_assets/scenes/transition.tscn"
 AnimatedTexts="*res://intro_assets/scenes/AnimatedTexts.tscn"
 RoomStateManager="*res://intro_assets/scenes/RoomStateManager.gd"
 SaveManagerMessGame="*res://intro_assets/scenes/SaveManager.gd"
+SaveMain="*res://intro_assets/scenes/SaveManagerMain.gd"
+MusicManager="*res://intro_assets/scenes/musicmanager.gd"
+PersistentHUD="*res://intro_assets/scenes/PersistentHUD.tscn"
 
 [display]
 

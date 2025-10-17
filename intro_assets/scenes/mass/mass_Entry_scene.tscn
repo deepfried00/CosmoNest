@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://bby8032kxeuqe"]
+
+[ext_resource type="PackedScene" uid="uid://cjvjg3ecv4ui4" path="res://intro_assets/scenes/mass/base_mass.tscn" id="1_e3wlo"]
+[ext_resource type="PackedScene" uid="uid://kcqc2svluacg" path="res://intro_assets/scenes/robodim.tscn" id="2_uoc4s"]
+[ext_resource type="Script" uid="uid://vmabipypuy33" path="res://intro_assets/scenes/mass/massEntry.gd" id="3_uoc4s"]
+[ext_resource type="Texture2D" uid="uid://bhpb0s7011kr" path="res://intro_assets/scenes/mass/Do_you_want_to_submit__2_-removebg-preview.png" id="4_btded"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_od66d"]
+size = Vector2(72, 30)
+
+[node name="MassEntryScene" type="Node2D"]
+
+[node name="BaseMass" parent="." instance=ExtResource("1_e3wlo")]
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer2"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Robodim" parent="CanvasLayer2/Control" instance=ExtResource("2_uoc4s")]
+position = Vector2(-18, 739)
+
+[node name="Area2D" type="Area2D" parent="CanvasLayer2"]
+script = ExtResource("3_uoc4s")
+
+[node name="yess" type="TextureRect" parent="CanvasLayer2/Area2D"]
+offset_left = 33.0
+offset_top = 379.0
+offset_right = 192.0
+offset_bottom = 557.0
+texture = ExtResource("4_btded")
+expand_mode = 1
+
+[node name="yes" type="CollisionShape2D" parent="CanvasLayer2/Area2D"]
+position = Vector2(115, 496)
+shape = SubResource("RectangleShape2D_od66d")

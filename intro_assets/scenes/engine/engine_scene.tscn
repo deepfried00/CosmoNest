@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://do4t0lpeoap8"]
+[gd_scene load_steps=8 format=3 uid="uid://do4t0lpeoap8"]
 
 [ext_resource type="Script" uid="uid://cwe5jglywtapf" path="res://intro_assets/scenes/engine/engine_scene.gd" id="1_b7bfr"]
 [ext_resource type="PackedScene" uid="uid://cpyh6a0x4pxv7" path="res://intro_assets/scenes/engine/engine.tscn" id="1_tru00"]
 [ext_resource type="PackedScene" uid="uid://kcqc2svluacg" path="res://intro_assets/scenes/robodim.tscn" id="2_b7bfr"]
 [ext_resource type="Texture2D" uid="uid://c05hq0ci2orvm" path="res://intro_assets/scenes/textbox.png" id="3_otgbc"]
 [ext_resource type="AudioStream" uid="uid://chqxnrn7wflmr" path="res://intro_assets/sound/Voice.mp3" id="4_gv5fy"]
+[ext_resource type="Texture2D" uid="uid://b74km1ra2u72j" path="res://intro_assets/scenes/savebutton-removebg-preview.png" id="6_otgbc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gv5fy"]
+size = Vector2(84, 50)
 
 [node name="EngineScene" type="Node2D"]
 script = ExtResource("1_b7bfr")
@@ -49,6 +53,7 @@ offset_left = -91.95999
 offset_top = -96.52002
 offset_right = 92.04001
 offset_bottom = 96.47998
+mouse_filter = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control"]
 layout_mode = 1
@@ -64,3 +69,39 @@ offset_bottom = 89.5
 grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 3.3290002
+anchor_top = 2.3960001
+anchor_right = 3.3290002
+anchor_bottom = 2.3960001
+offset_left = -267.53607
+offset_top = -58.42804
+offset_right = 267.46393
+offset_bottom = 58.57196
+
+[node name="choices" type="RichTextLabel" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 364.0
+offset_top = 390.0
+offset_right = 871.0
+offset_bottom = 537.0
+
+[node name="SaveButton" type="Area2D" parent="CanvasLayer/Control"]
+
+[node name="button" type="TextureRect" parent="CanvasLayer/Control/SaveButton"]
+offset_left = 205.0
+offset_top = 133.0
+offset_right = 290.0
+offset_bottom = 219.0
+mouse_filter = 2
+texture = ExtResource("6_otgbc")
+expand_mode = 1
+
+[node name="buttom" type="CollisionShape2D" parent="CanvasLayer/Control/SaveButton"]
+position = Vector2(247, 172)
+shape = SubResource("RectangleShape2D_gv5fy")
+
+[connection signal="input_event" from="CanvasLayer/Control/SaveButton" to="." method="_on_save_button_input_event"]

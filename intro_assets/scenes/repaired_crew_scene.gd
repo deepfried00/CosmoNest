@@ -21,6 +21,7 @@ func _ready():
 	dialogue_data = load("res://intro_assets/scenes/repaired_crew_DIalo.gd").new().get_dialogue()
 	robodim.play()
 	show_next_line()
+	MusicManager.set_music_state(true)
 	arrow_image.visible = false
 	
 

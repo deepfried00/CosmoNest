@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bmk7g0vctj7nl"]
+[gd_scene load_steps=9 format=3 uid="uid://bmk7g0vctj7nl"]
 
 [ext_resource type="Texture2D" uid="uid://b06d7ou7bg71j" path="res://intro_assets/scenes/rep_kitch.webp" id="1_gurv3"]
 [ext_resource type="Script" uid="uid://3vamw0sv8tjk" path="res://intro_assets/scenes/kicten_click.gd" id="2_ohht0"]
+[ext_resource type="Texture2D" uid="uid://dq67tou3ddwil" path="res://intro_assets/scenes/Your paragraph text (1).png" id="3_jb8l8"]
 [ext_resource type="AudioStream" uid="uid://c346wxrqyakkj" path="res://intro_assets/sound/gamesound.mp3" id="3_ohht0"]
+[ext_resource type="Script" uid="uid://dvmyvajoe7yvq" path="res://intro_assets/scenes/texture_rect.gd" id="4_xnaep"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gurv3"]
 size = Vector2(75, 199)
@@ -36,6 +38,14 @@ shape = SubResource("RectangleShape2D_gurv3")
 [node name="engine" type="CollisionShape2D" parent="CanvasLayer/Area2D"]
 position = Vector2(1226.5, 513.5)
 shape = SubResource("RectangleShape2D_fxqbs")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Area2D"]
+offset_left = -343.0
+offset_top = -135.0
+offset_right = 1577.0
+offset_bottom = 945.0
+texture = ExtResource("3_jb8l8")
+script = ExtResource("4_xnaep")
 
 [node name="storage" type="CollisionShape2D" parent="CanvasLayer/Area2D"]
 position = Vector2(674, 698.5)

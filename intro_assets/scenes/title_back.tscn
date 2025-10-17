@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2klc0k878fxx"]
+
+[ext_resource type="PackedScene" uid="uid://gj5u75jowqao" path="res://intro_assets/scenes/title_Screen.tscn" id="1_pf410"]
+[ext_resource type="Script" uid="uid://qu8ukhsv8m3b" path="res://intro_assets/scenes/title_back.gd" id="1_u504o"]
+[ext_resource type="Texture2D" uid="uid://hblkihnulur1" path="res://intro_assets/scenes/back.png" id="2_u504o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dnd3b"]
+size = Vector2(110, 99)
+
+[node name="TitleBack" type="Node2D"]
+script = ExtResource("1_u504o")
+
+[node name="TitleScreen" parent="." instance=ExtResource("1_pf410")]
+
+[node name="back_button" type="Area2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="back_button"]
+offset_left = 1148.0
+offset_top = 596.0
+offset_right = 1281.0
+offset_bottom = 718.0
+texture = ExtResource("2_u504o")
+expand_mode = 1
+
+[node name="back" type="CollisionShape2D" parent="back_button"]
+position = Vector2(1219, 656.5)
+shape = SubResource("RectangleShape2D_dnd3b")
+
+[connection signal="input_event" from="back_button" to="." method="_on_back_button_input_event"]

@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://gmtq1uohdev3"]
+[gd_scene load_steps=5 format=3 uid="uid://gmtq1uohdev3"]
 
 [ext_resource type="Texture2D" uid="uid://cojc4irxestyi" path="res://intro_assets/scenes/1000016006.png" id="1_qvvj1"]
+[ext_resource type="Script" uid="uid://vle8lu8e68oy" path="res://intro_assets/scenes/area_2d.gd" id="2_x1coy"]
+[ext_resource type="Texture2D" uid="uid://hblkihnulur1" path="res://intro_assets/scenes/back.png" id="3_dw3pt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xva1b"]
+size = Vector2(86, 87)
 
 [node name="Ending" type="Node2D"]
 
@@ -11,3 +16,19 @@ offset_right = 1283.0
 offset_bottom = 953.0
 texture = ExtResource("1_qvvj1")
 expand_mode = 1
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_x1coy")
+
+[node name="return" type="TextureRect" parent="Area2D"]
+offset_left = 1.0
+offset_top = 560.0
+offset_right = 148.0
+offset_bottom = 704.0
+texture = ExtResource("3_dw3pt")
+expand_mode = 1
+flip_h = true
+
+[node name="returnb" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(73, 635.5)
+shape = SubResource("RectangleShape2D_xva1b")

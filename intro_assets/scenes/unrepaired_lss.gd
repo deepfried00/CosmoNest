@@ -6,6 +6,7 @@ extends Node2D
 const FONT_PATH = "res://intro_assets/font/public-pixel-font/PublicPixel-rv0pA.ttf"
 
 func _ready():
+	MusicManager.set_music_state(false)
 	info_box.visible = false  # Start hidden
 
 func show_info_popup_text():

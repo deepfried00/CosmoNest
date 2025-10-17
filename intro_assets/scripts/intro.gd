@@ -20,10 +20,14 @@ var typing_coroutine = null
 
 func _ready():
 	slides = load("res://intro_assets/intro_texts.gd").new().get_slides()
+	MusicManager.set_music_state(true)
 	logo.modulate.a = 0.0  # start fully transparent
 	logo.visible = true    # visible but transparent
 	update_slide()
-	bgm_player.play()
+	if MusicManager.music_on:
+		bgm_player.play()
+	else:
+		bgm_player.stop()
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
