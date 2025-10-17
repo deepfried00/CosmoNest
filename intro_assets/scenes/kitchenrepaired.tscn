@@ -39,6 +39,13 @@ shape = SubResource("RectangleShape2D_gurv3")
 position = Vector2(1226.5, 513.5)
 shape = SubResource("RectangleShape2D_fxqbs")
 
+[node name="storage" type="CollisionShape2D" parent="CanvasLayer/Area2D"]
+position = Vector2(674, 698.5)
+shape = SubResource("RectangleShape2D_ohht0")
+
+[node name="Gamesound" type="AudioStreamPlayer" parent="CanvasLayer/Area2D"]
+stream = ExtResource("3_ohht0")
+
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Area2D"]
 offset_left = -343.0
 offset_top = -135.0
@@ -46,10 +53,3 @@ offset_right = 1577.0
 offset_bottom = 945.0
 texture = ExtResource("3_jb8l8")
 script = ExtResource("4_xnaep")
-
-[node name="storage" type="CollisionShape2D" parent="CanvasLayer/Area2D"]
-position = Vector2(674, 698.5)
-shape = SubResource("RectangleShape2D_ohht0")
-
-[node name="Gamesound" type="AudioStreamPlayer" parent="CanvasLayer/Area2D"]
-stream = ExtResource("3_ohht0")

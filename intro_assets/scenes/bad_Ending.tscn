@@ -1,17 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://c4lclpgg2d05t"]
+[gd_scene load_steps=8 format=3 uid="uid://c4lclpgg2d05t"]
 
 [ext_resource type="Texture2D" uid="uid://dxs766a8uvvkn" path="res://intro_assets/scenes/Untitled design.png" id="1_7n0l1"]
+[ext_resource type="Script" uid="uid://0we70r6veojw" path="res://intro_assets/scenes/bad_ending.gd" id="1_nhakr"]
 [ext_resource type="Texture2D" uid="uid://hblkihnulur1" path="res://intro_assets/scenes/back.png" id="2_dr0hx"]
 [ext_resource type="Script" uid="uid://vle8lu8e68oy" path="res://intro_assets/scenes/area_2d.gd" id="2_manu8"]
+[ext_resource type="AudioStream" uid="uid://c346wxrqyakkj" path="res://intro_assets/sound/gamesound.mp3" id="5_iae6a"]
+[ext_resource type="AudioStream" uid="uid://d2evy7ynnn5rr" path="res://intro_assets/sound/typing sound.mp3" id="6_2g0dg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_manu8"]
 size = Vector2(86, 87)
 
 [node name="BadEnding" type="Node2D"]
+script = ExtResource("1_nhakr")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_top = -28.0
+offset_right = 1284.0
+offset_bottom = 722.0
 texture = ExtResource("1_7n0l1")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -29,3 +34,22 @@ flip_h = true
 [node name="returnb" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(73, 635.5)
 shape = SubResource("RectangleShape2D_manu8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.49500003
+anchor_top = 0.81000006
+anchor_right = 0.49500003
+anchor_bottom = 0.81000006
+offset_left = -469.60004
+offset_top = -53.200073
+offset_right = 641.39996
+offset_bottom = 125.79993
+
+[node name="Gamesound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_iae6a")
+
+[node name="TypingSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_2g0dg")
