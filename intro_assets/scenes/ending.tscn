@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://gmtq1uohdev3"]
+[gd_scene load_steps=9 format=3 uid="uid://gmtq1uohdev3"]
 
 [ext_resource type="Script" uid="uid://c7x43xduwvehj" path="res://intro_assets/scenes/ending.gd" id="1_dw3pt"]
 [ext_resource type="Texture2D" uid="uid://csg8gyly8ge7i" path="res://intro_assets/scenes/Untitled design (1).png" id="1_x1coy"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://hblkihnulur1" path="res://intro_assets/scenes/back.png" id="3_dw3pt"]
 [ext_resource type="AudioStream" uid="uid://c346wxrqyakkj" path="res://intro_assets/sound/gamesound.mp3" id="5_ydjbi"]
 [ext_resource type="AudioStream" uid="uid://d2evy7ynnn5rr" path="res://intro_assets/sound/typing sound.mp3" id="6_a4l7f"]
+[ext_resource type="AudioStream" uid="uid://cnkgn3s0xafdq" path="res://intro_assets/sound/Good Ending!.wav" id="7_a4l7f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xva1b"]
 size = Vector2(86, 87)
@@ -54,3 +55,6 @@ stream = ExtResource("5_ydjbi")
 
 [node name="TypingSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_a4l7f")
+
+[node name="GoodEnding" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_a4l7f")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c4lclpgg2d05t"]
+[gd_scene load_steps=9 format=3 uid="uid://c4lclpgg2d05t"]
 
 [ext_resource type="Texture2D" uid="uid://dxs766a8uvvkn" path="res://intro_assets/scenes/Untitled design.png" id="1_7n0l1"]
 [ext_resource type="Script" uid="uid://0we70r6veojw" path="res://intro_assets/scenes/bad_ending.gd" id="1_nhakr"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://vle8lu8e68oy" path="res://intro_assets/scenes/area_2d.gd" id="2_manu8"]
 [ext_resource type="AudioStream" uid="uid://c346wxrqyakkj" path="res://intro_assets/sound/gamesound.mp3" id="5_iae6a"]
 [ext_resource type="AudioStream" uid="uid://d2evy7ynnn5rr" path="res://intro_assets/sound/typing sound.mp3" id="6_2g0dg"]
+[ext_resource type="AudioStream" uid="uid://wrna6xb8i6pg" path="res://intro_assets/sound/bad.wav" id="7_iae6a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_manu8"]
 size = Vector2(86, 87)
@@ -53,3 +54,6 @@ stream = ExtResource("5_iae6a")
 
 [node name="TypingSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_2g0dg")
+
+[node name="Bad" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_iae6a")

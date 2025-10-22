@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var text_box: RichTextLabel = $CanvasLayer/RichTextLabel
-@onready var bgm: AudioStreamPlayer = $Gamesound
+@onready var bgm: AudioStreamPlayer = $Bad
 @onready var typing_sound: AudioStreamPlayer = $TypingSound
 
 var typing_speed := 0.04

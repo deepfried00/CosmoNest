@@ -9,7 +9,7 @@ func _ready():
 	MusicManager.set_music_state(true)
 	pink.visible = false
 	yl.visible = false
-	win.visible = false
+
 
 
 	
@@ -31,7 +31,8 @@ func _on_click(viewport, event, shape_idx):
 			"sun":
 				yl.visible = true
 			"earth":
-				win.visible = true
+				print("going to totate eearth")
+				Transition.transition_to_scene("res://intro_assets/scenes/window.tscn")
 
 # Transition to Engine scene with all room repair states checked
 func _handle_engine_transition():

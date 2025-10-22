@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://3hopnpi7omta" path="res://intro_assets/scenes/mass/1000015850-removebg-preview.png" id="2_148mb"]
 [ext_resource type="Script" uid="uid://djy5ic72tnoue" path="res://intro_assets/scenes/mass/doorsformess.gd" id="2_w4twc"]
 [ext_resource type="Script" uid="uid://do1wielax6v34" path="res://intro_assets/scenes/mass/game.gd" id="3_5ckpx"]
-[ext_resource type="Texture2D" uid="uid://dl227dsiwopfo" path="res://intro_assets/scenes/note22.png" id="4_o0bp6"]
+[ext_resource type="Texture2D" uid="uid://diqdvyv80bbr3" path="res://intro_assets/scenes/mass/another.png" id="4_dmsqg"]
 [ext_resource type="Script" uid="uid://c26vlvqn0dmpq" path="res://intro_assets/scenes/mass/note_2.gd" id="5_o0bp6"]
 [ext_resource type="Texture2D" uid="uid://5lblvp6jv0wp" path="res://intro_assets/scenes/mass/Reset-removebg-preview.png" id="6_dsqw7"]
 [ext_resource type="Texture2D" uid="uid://3w0towrjvlu1" path="res://intro_assets/scenes/mass/1000015835.png" id="7_5kifn"]
@@ -91,11 +91,11 @@ position = Vector2(471.75, 102.5)
 shape = SubResource("RectangleShape2D_twk54")
 
 [node name="note2" type="TextureRect" parent="CanvasLayer/Area2D"]
-offset_left = 111.0
-offset_top = 16.0
-offset_right = 786.0
-offset_bottom = 512.0
-texture = ExtResource("4_o0bp6")
+offset_left = 72.0
+offset_top = -1.0
+offset_right = 841.0
+offset_bottom = 548.0
+texture = ExtResource("4_dmsqg")
 expand_mode = 1
 script = ExtResource("5_o0bp6")
 
