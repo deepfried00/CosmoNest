@@ -154,8 +154,8 @@ func _on_choice_selected(choice: Dictionary):
 		match choice["action"]:
 			"change_scene":
 				scene_changing = true
-				await get_tree().create_timer(1.5).timeout
-				get_tree().change_scene_to_file(choice["target"])
+				await get_tree().create_timer(5).timeout
+				Transition.transition_to_scene(choice["target"])
 			"advance_dialogue":
 				await get_tree().create_timer(1.2).timeout
 				dialogue_finished = true

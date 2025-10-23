@@ -16,7 +16,7 @@ func get_dialogue() -> Array:
 			"choices": [
 				{
 					"text": "Though I'd say your company doesn't value the workers' work at all. That's why it's futile",
-					"robodim": "...Oh...Welp,\nnow you've done it.",
+					"robodim": "...Oh...\n Welp,\nnow you've done it.",
 					"action": "change_scene",
 					"target": "res://intro_assets/scenes/bad_Ending.tscn"
 				},

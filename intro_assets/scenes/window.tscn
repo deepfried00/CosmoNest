@@ -1,18 +1,23 @@
-[gd_scene load_steps=8 format=3 uid="uid://dyfg0rcfsdac"]
+[gd_scene load_steps=10 format=3 uid="uid://dyfg0rcfsdac"]
 
-[ext_resource type="Texture2D" uid="uid://hh1ckktnt513" path="res://intro_assets/scenes/engine/bgg.png" id="1_tlyax"]
+[ext_resource type="Script" uid="uid://cskr08l7y6h6p" path="res://intro_assets/scenes/data_show.gd" id="1_3bdlf"]
+[ext_resource type="Texture2D" uid="uid://depnswm7gw68g" path="res://intro_assets/scenes/data.png" id="1_hfre2"]
 [ext_resource type="PackedScene" uid="uid://ck257q8nqbwqo" path="res://intro_assets/scenes/earth.tscn" id="2_q4n7w"]
 [ext_resource type="Script" uid="uid://cbukwognaopcn" path="res://intro_assets/scenes/rotateearth.gd" id="3_q4n7w"]
 [ext_resource type="Script" uid="uid://d2g07sjbj7h76" path="res://intro_assets/scenes/back_button.gd" id="4_hfre2"]
 [ext_resource type="Texture2D" uid="uid://hblkihnulur1" path="res://intro_assets/scenes/back.png" id="5_3bdlf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tlyax"]
-radius = 224.98445
+radius = 249.07228
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3bdlf"]
-size = Vector2(110, 99)
+size = Vector2(117, 110)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hfre2"]
+size = Vector2(274, 630)
 
 [node name="Window" type="Node2D"]
+script = ExtResource("1_3bdlf")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 40.0
@@ -21,33 +26,40 @@ offset_bottom = 40.0
 [node name="Bgg" type="Sprite2D" parent="."]
 position = Vector2(641, 364)
 scale = Vector2(1, 0.9916667)
-texture = ExtResource("1_tlyax")
+texture = ExtResource("1_hfre2")
 
 [node name="Earth" parent="." instance=ExtResource("2_q4n7w")]
-position = Vector2(580, 360.00003)
-scale = Vector2(9.937499, 9.15625)
+position = Vector2(587.25, 361.49997)
+scale = Vector2(10.239584, 9.604167)
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("3_q4n7w")
 
 [node name="earth" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(580, 366)
+position = Vector2(592, 357)
 shape = SubResource("CircleShape2D_tlyax")
 
 [node name="back_button" type="Area2D" parent="."]
+position = Vector2(-19, -591)
 script = ExtResource("4_hfre2")
 
 [node name="TextureRect" type="TextureRect" parent="back_button"]
-offset_left = 22.0
-offset_top = 590.0
-offset_right = 155.0
-offset_bottom = 712.0
+offset_left = 936.0
+offset_top = 1192.0
+offset_right = 1069.0
+offset_bottom = 1314.0
 texture = ExtResource("5_3bdlf")
 expand_mode = 1
-flip_h = true
+metadata/_edit_use_anchors_ = true
 
 [node name="back" type="CollisionShape2D" parent="back_button"]
-position = Vector2(86, 653)
+position = Vector2(999.5, 1251)
 shape = SubResource("RectangleShape2D_3bdlf")
+
+[node name="weather" type="Area2D" parent="."]
+
+[node name="weatherdata" type="CollisionShape2D" parent="weather"]
+position = Vector2(156, 393)
+shape = SubResource("RectangleShape2D_hfre2")
 
 [connection signal="input_event" from="back_button" to="." method="_on_back_button_input_event"]
