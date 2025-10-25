@@ -1,5 +1,6 @@
 # CosmoNest
 
-Installation for pc: go to the install zip file, then unzip it and double click the .exe file and you're done !
+Installation for pc: download click on CosmoNest!_1.0.0 pc.zip, unzip, and instal!! 
+Installation for android: download click on CosmoNest!_1.0.0.apk ( install and play) or CosmoNest!_1.0.0.zip, unzip, and instal and play !! 
 
 Where is my screenshot? : C:\Users\<YourName>\AppData\Roaming\Godot\app_userdata\CosmoNest\
