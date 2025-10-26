@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://cw6ljxguy3g7q"]
+
+[ext_resource type="Script" uid="uid://b8nthplfp8do5" path="res://intro_assets/scenes/mass/final_mass_scene.gd" id="1_c4lcy"]
+[ext_resource type="PackedScene" uid="uid://cjvjg3ecv4ui4" path="res://intro_assets/scenes/mass/base_mass.tscn" id="2_7uy33"]
+[ext_resource type="PackedScene" uid="uid://kcqc2svluacg" path="res://intro_assets/scenes/robodim.tscn" id="3_28lkm"]
+[ext_resource type="Texture2D" uid="uid://c05hq0ci2orvm" path="res://intro_assets/scenes/textbox.png" id="4_73v3r"]
+[ext_resource type="AudioStream" uid="uid://chqxnrn7wflmr" path="res://intro_assets/sound/Voice.mp3" id="5_7uy33"]
+
+[node name="FinalMassScene" type="Node2D"]
+script = ExtResource("1_c4lcy")
+
+[node name="BaseMass" parent="." instance=ExtResource("2_7uy33")]
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer2"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Robodim" parent="CanvasLayer2/Control" instance=ExtResource("3_28lkm")]
+position = Vector2(-18, 739)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer2"]
+offset_left = 88.0
+offset_top = 268.0
+offset_right = 362.0
+offset_bottom = 563.0
+texture = ExtResource("4_73v3r")
+expand_mode = 1
+
+[node name="Control2" type="Control" parent="CanvasLayer2"]
+layout_mode = 3
+anchor_left = 0.18100001
+anchor_top = 0.572
+anchor_right = 0.18100001
+anchor_bottom = 0.572
+offset_left = -37.680008
+offset_top = -136.84003
+offset_right = 146.31999
+offset_bottom = 56.159973
+mouse_filter = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer2/Control2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.19800001
+anchor_top = 0.666
+anchor_right = 0.19800001
+anchor_bottom = 0.666
+offset_left = -91.43201
+offset_top = -83.537994
+offset_right = 91.56799
+offset_bottom = 83.462006
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+
+[node name="Voice" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_7uy33")

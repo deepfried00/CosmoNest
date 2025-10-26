@@ -12,4 +12,4 @@ func _on_click(viewport, event, shape_idx):
 
 		if clicked_shape.name == "yess":
 				print("going to yes")
-				Transition.transition_to_scene("res://intro_assets/scenes/ending.tscn")
+				Transition.transition_to_scene("res://intro_assets/scenes/mass/final_mass_scene.tscn")

@@ -14,7 +14,14 @@ func _on_click(viewport, event, shape_idx):
 
 		match clicked_shape.name:
 			"note":
+				var current_scene = "res://intro_assets/scenes/mass/mass_Entry_scene.tscn"
+				if current_scene:
+					Engine.set_meta("previous_scene", current_scene)
+
+				# Transition to note cutscene
+				print("📝 Opening note cutscene...")
 				note.visible = true
+				Transition.transition_to_scene("res://intro_assets/scenes/mass/note_cutScene.tscn")
 			"engine":
 				print("going to erer")
 				Transition.transition_to_scene("res://intro_assets/scenes/engine/engine.tscn")
